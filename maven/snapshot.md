@@ -1,4 +1,4 @@
-([출처:스택오버플로우])[https://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it]
+[[출처:스택오버플로우]](https://stackoverflow.com/questions/5901378/what-exactly-is-a-maven-snapshot-and-why-do-we-need-it)
 
 
 Maven의 스냅 샷 버전은 아직 공개되지 않은 버전입니다.
