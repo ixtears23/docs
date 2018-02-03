@@ -37,7 +37,7 @@ Maven 빌드 파일 또는 번들로 설치된 프로젝트를 zip 파일로 다
 - JDK 1.8 이상
 - Gradle 2.3 이상 또는 Maven 3.0 이상
 - 코드를 IDE로 직접 가져올 수도 있습니다.
- - [Spring Tool Suite (STS)](https://spring.io/guides/gs/sts/)
+   - [Spring Tool Suite (STS)](https://spring.io/guides/gs/sts/)
 
 
 
