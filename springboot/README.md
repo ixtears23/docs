@@ -38,6 +38,11 @@ Maven 빌드 파일 또는 번들로 설치된 프로젝트를 zip 파일로 다
 - Gradle 2.3 이상 또는 Maven 3.0 이상
 - 코드를 IDE로 직접 가져올 수도 있습니다.
   - [Spring Tool Suite (STS)](https://spring.io/guides/gs/sts/)
+  - [IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea/)
+
+#### 이 가이드를 작성하는 방법
+대부분의 Spring Getting Started 가이드와 마찬가지로,  
+처음부터 시작하여 각 단계를 완료하거나 이미 익숙한 기본 설정 단계를 건너 뛸 수 있습니다.  
 
 
 
