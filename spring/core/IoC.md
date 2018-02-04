@@ -264,7 +264,17 @@ Spring IoC 컨테이너는 하나 이상의 빈을 관리한다.
 이 메타 데이터는 각 bean 정의를 구성하는 속성 세트로 변환됩니다.  
 bean 정의
 
-
+| Property 	    | Explained in…  | 
+| :----------- | :-------------: | 
+| class     | Instantiating beans  |
+| name    | Naming beans |
+| scope | Bean scopes |
+| constructor arguments    | Dependency Injection  |
+| properties    | Dependency Injection  |
+| autowiring mode   | Autowiring collaborators |
+| lazy-initialization mode | Lazy-initialized beans |
+| initialization method | Initialization callbacks |
+| destruction method | Destruction callbacks |
 
 
 
