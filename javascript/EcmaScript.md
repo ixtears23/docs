@@ -43,3 +43,11 @@ ECMA-262 초판은 1997 년 6 월 Ecma 총회에서 채택되었습니다.
 
 JavaScript와 JScript는 모두 ECMAScript와 호환되는 것을 목표로하지만 ECMA 사양에 설명되지 않은 추가 기능도 제공합니다.  
 
+
+---
+### version
+
+ECMAscript 5
+ECMAscript 6 - ECMAscript2015
+ECMAscript 7 - ECMAscript2016
+ECMAscript 8 - ECMAscript2017
