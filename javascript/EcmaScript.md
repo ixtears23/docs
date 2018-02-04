@@ -46,8 +46,7 @@ JavaScript와 JScript는 모두 ECMAScript와 호환되는 것을 목표로하�
 
 ---
 ### version
-
-ECMAscript 5
-ECMAscript 6 - ECMAscript2015
-ECMAscript 7 - ECMAscript2016
-ECMAscript 8 - ECMAscript2017
+ECMAscript 5  
+ECMAscript 6 - ECMAscript2015  
+ECMAscript 7 - ECMAscript2016  
+ECMAscript 8 - ECMAscript2017  
