@@ -316,7 +316,190 @@ bean id 고유성은 여전히 컨테이너에 의해 시행되지만 XML 파서
 > Bean의 이름을 계속 지정하면 구성을보다 쉽게 읽고 이해할 수 있으며  
 > Spring AOP를 사용하는 경우 이름과 관련된 콩 세트에 조언을 적용 할 때 많은 도움이됩니다.  
 
-##### (Aliasing a bean outside the bean definition)[https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-beanname-alias]
+##### [Aliasing a bean outside the bean definition](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-beanname-alias)
+Bean 정의 외부에서 Bean 별명 지정  
+Bean 정의 자체에서, id 속성으로 지정된 하나의 이름과 name 속성의 다른 이름의 조합을 사용하여  
+Bean에 둘 이상의 이름을 제공 할 수 있습니다.  
+이 이름은 동일한 Bean에 대한 동등한 별명이 될 수 있으며,  
+응용 프로그램의 각 구성 요소가 해당 구성 요소 자체에 고유 한 bean 이름을 사용하여  
+공통 종속성을 참조하도록 허용하는 것과 같은 일부 상황에 유용합니다.  
+
+그러나 bean이 실제로 정의 된 모든 별명을 지정하는 것이 항상 적절한 것은 아닙니다.  
+때로는 다른 곳에 정의 된 bean에 대한 별명을 소개하는 것이 바람직합니다.  
+이는 대개 구성이 각 서브 시스템 사이에서 분할되는 대형 시스템에서 각 서브 시스템마다 고유 한 오브젝트 정의 세트를 갖는 경우입니다.  ?
+XML 기반 구성 메타 데이터에서 <alias /> 요소를 사용하여이를 수행 할 수 있습니다.  
+~~~xml
+<alias name="fromName" alias="toName"/>
+~~~
+이 경우, fromName이라는 이름의 동일한 컨테이너에있는 bean은 이 별명 정의 사용 후 toName으로 참조 될 수 있습니다.  
+예를 들어, 서브 시스템 A의 구성 메타 데이터는 subsystemA-dataSource라는 이름으로 DataSource를 참조 할 수 있습니다.  
+서브 시스템 B의 구성 메타 데이터는 subsystemB-dataSource라는 이름으로 DataSource를 참조 할 수 있습니다.  
+이 두 서브 시스템을 모두 사용하는 주 응용 프로그램을 작성할 때  
+주 응용 프로그램은 myApp-dataSource라는 이름으로 DataSource를 참조합니다.  
+세 개의 이름 모두가 MyApp 구성 메타 데이터에 추가하는 동일한 객체를 참조하게하려면 다음 별칭 정의를 사용합니다.  
+~~~xml
+<alias name="subsystemA-dataSource" alias="subsystemB-dataSource"/>
+<alias name="subsystemA-dataSource" alias="myApp-dataSource" />
+~~~
+이제 각 구성 요소와 기본 응용 프로그램은 고유하고 다른 정의와 충돌하지 않도록 보장 된  
+이름을 사용하여 dataSource를 참조 할 수 있지만 실제로 동일한 bean을 참조합니다.  
+
+
+자바 설정을 사용하고 있다면, @Bean 어노테이션을 사용하여 별명을 제공 할 수 있습니다.  
+자세한 내용은 [@Bean 어노테이션 사용하기](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-java-bean-annotation)를 참조하십시오.  
+
+### 1.3.2. Instantiating beans
+[bean인스턴스화](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-factory-class)  
+bean 정의는 본질적으로 하나 이상의 객체를 생성하는 방법입니다.  
+컨테이너는 물을 때 명명 된 bean에 대한 레서피를보고,  
+그 bean 정의로 캡슐화 된 설정 메타 데이터를 사용하여 실제 객체를 생성 (또는 획득)합니다.  
+
+XML 기반 구성 메타 데이터를 사용하는 경우 `<bean />` 요소의 class 속성에서 인스턴스화 할 객체의 유형 (또는 클래스)을 지정합니다.  
+내부적으로 BeanDefinition 인스턴스의 Class 속성 인이 클래스 속성은 대개 필수입니다.  
+(예외에 대해서는 인스턴스 팩토리 메서드 및 Bean 정의 상속을 사용하여 인스턴스화를 참조하십시오.)  
+다음 두 가지 방법 중 하나로 Class 속성을 사용합니다.  
+
+- 일반적으로 컨테이너 자체가 해당 생성자를 반영하여 bean을 직접 생성하는 경우에  
+생성 될 bean 클래스를 지정하는 것은 new 연산자를 사용하는 Java 코드와 다소 동일합니다.  
+- 드문 경우이지만 컨테이너가 빈을 생성하기 위해 클래스의 정적 팩토리 메소드를 호출하는 경우,  
+객체를 생성하기 위해 호출 될 정적 팩토리 메소드를 포함하는 실제 클래스를 지정합니다.  
+static 팩토리 메소드의 호출로부터 돌려 주어진 오브젝트 형은, 같은 클래스 또는 다른 클래스 일 가능성이 있습니다.  
+
+com.example 패키지에 Foo라는 클래스가 있고  
+이 Foo 클래스에 Bar라는 정적 중첩 클래스가있는 경우 Bean 정의의 'class'속성 값은 다음과 같습니다.  
+`com.example.Foo$Bar`
+이름에 $ 문자를 사용하여 중첩 클래스 이름을 외부 클래스 이름과 구분합니다.  
+
+
+##### Instantiation with a constructor
+[생성자로 인스턴스화 하기](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-factory-class-ctor)  
+생성자 접근법으로 빈을 생성하면, 모든 일반 클래스는 Spring에 의해 사용 가능하고 호환이 가능하다.  
+즉, 개발중인 클래스는 특정 인터페이스를 구현하거나 특정 방식으로 코딩 할 필요가 없습니다.  
+간단히 bean 클래스를 지정하면 충분합니다.  
+그러나 특정 bean에 대해 사용하는 IoC 유형에 따라 기본 (비어있는) 생성자가 필요할 수 있습니다.  
+
+Spring IoC 컨테이너는 관리하고자하는 클래스를 사실상 관리 할 수있다.  
+진정한 JavaBeans 관리에 국한되지 않습니다.  
+대부분의 Spring 사용자는 기본 (인수 없음) 생성자와 적절한 setter 및 getter를  
+컨테이너의 속성 다음에 모델링 한 실제 JavaBeans를 선호합니다.  
+컨테이너에 더 많은  non-bean-style 클래스를 가질 수도 있습니다.  
+예를 들어, 절대적으로 JavaBean 스펙을 따르지 않는 레거시 연결 풀을 사용해야하는 경우,  
+Spring도이를 관리 할 수 있습니다.  
+
+XML 기반 구성 메타 데이터를 사용하면 다음과 같이 Bean 클래스를 지정할 수 있습니다.  
+
+~~~
+<bean id="exampleBean" class="examples.ExampleBean"/>
+
+<bean name="anotherExample" class="examples.ExampleBeanTwo"/>
+~~~
+생성자에 인수를 제공하는 메커니즘 (필요한 경우) 및 객체가 생성 된 후에  
+객체 인스턴스 속성을 설정하는 방법에 대한 자세한 내용은 Injection Dependencies를 참조하십시오.  
+
+##### Instantiation with a static factory method
+[정적 팩토리 메소드로 인스턴스화하기](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-factory-class-static-factory-method)  
+정적 팩토리 메소드로 작성한 bean을 정의 할 때,  
+class 속성을 사용하여 정적 팩토리 메소드를 포함하는 클래스를 지정하고  
+factory-method라는 속성을 사용하여 팩토리 메소드 자체의 이름을 지정하십시오.  
+
+이 메소드를 호출하고 (나중에 설명 된 선택적 인수 사용) 라이브 객체를 반환 할 수 있어야합니다.  
+이 객체는 이후 생성자를 통해 만들어진 것처럼 취급됩니다.  
+그러한 bean 정의를 사용하는 한 가지는 레거시 코드에서 정적 팩토리를 호출하는 것입니다.  
+
+다음 bean 정의는 factory-method를 호출하여 bean을 생성하도록 지정합니다.  
+이 정의는 반환 된 객체의 유형 (클래스)을 지정하지 않으며 factory 메소드를 포함하는 클래스 만 지정합니다.  
+이 예제에서 createInstance () 메서드는 정적 메서드 여야합니다.  
+
+~~~xml
+<bean id="clientService"
+    class="examples.ClientService"
+    factory-method="createInstance"/>
+~~~
+~~~java
+public class ClientService {
+    private static ClientService clientService = new ClientService();
+    private ClientService() {}
+
+    public static ClientService createInstance() {
+        return clientService;
+    }
+}
+~~~
+
+팩토리 메소드에 인수 (선택적)를 제공하고 팩토리에서 오브젝트가 리턴 된 후  
+오브젝트 인스턴스 등록 정보를 설정하는 메커니즘에 대한 자세한 내용은 [종속성 및 구성을 참조하십시오.](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-factory-properties-detailed)  
+
+
+##### Instantiation using an instance factory method
+[인스턴스 팩토리 메소드를 사용한 인스턴스화](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-factory-class-instance-factory-method)  
+정적 팩토리 메소드를 통한 인스턴스화와 유사하게, 인스턴스 팩토리 메소드를 사용한 인스턴스화는  
+컨테이너에서 기존 빈의 비 정적 메소드를 호출하여 새 빈을 작성합니다.  
+이 메커니즘을 사용하려면 class 속성을 공백으로두고 factory-bean 속성에서  
+객체를 생성하기 위해 호출 할 인스턴스 메소드가 포함 된 현재 (또는 상위 / 조상) 컨테이너에서 bean의 이름을 지정하십시오.  
+팩토리 메소드 자체의 이름을 factory-method 속성으로 설정하십시오.  
+
+~~~xml
+<!-- the factory bean, which contains a method called createInstance() -->
+<bean id="serviceLocator" class="examples.DefaultServiceLocator">
+    <!-- inject any dependencies required by this locator bean -->
+</bean>
+
+<!-- the bean to be created via the factory bean -->
+<bean id="clientService"
+    factory-bean="serviceLocator"
+    factory-method="createClientServiceInstance"/>
+~~~
+~~~java
+public class DefaultServiceLocator {
+
+    private static ClientService clientService = new ClientServiceImpl();
+
+    public ClientService createClientServiceInstance() {
+        return clientService;
+    }
+}
+~~~
+
+하나의 팩토리 클래스는 다음과 같이 하나 이상의 팩토리 메소드를 가질 수 있습니다.  
+~~~xml
+<bean id="serviceLocator" class="examples.DefaultServiceLocator">
+    <!-- inject any dependencies required by this locator bean -->
+</bean>
+
+<bean id="clientService"
+    factory-bean="serviceLocator"
+    factory-method="createClientServiceInstance"/>
+
+<bean id="accountService"
+    factory-bean="serviceLocator"
+    factory-method="createAccountServiceInstance"/>
+~~~
+~~~java
+public class DefaultServiceLocator {
+
+    private static ClientService clientService = new ClientServiceImpl();
+
+    private static AccountService accountService = new AccountServiceImpl();
+
+    public ClientService createClientServiceInstance() {
+        return clientService;
+    }
+
+    public AccountService createAccountServiceInstance() {
+        return accountService;
+    }
+}
+~~~
+이 접근법은 factory bean 자체가 의존성 주입 (DI)을 통해 관리되고 구성 될 수 있음을 보여줍니다.  
+factory bean은 인스턴스 또는 정적 팩토리 메소드를 통해 객체를 생성 할 Spring 컨테이너에 구성된 bean을 참조합니다.  
+반대로, [FactoryBean](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-factory-extension-factorybean) (대문자 사용에주의)은 Spring 관련 FactoryBean을 참조합니다.  
+
+
+
+
+
+
+
 
 
 
