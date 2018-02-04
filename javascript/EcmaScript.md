@@ -50,3 +50,10 @@ ECMAscript 5
 ECMAscript 6 - ECMAscript2015  
 ECMAscript 7 - ECMAscript2016  
 ECMAscript 8 - ECMAscript2017  
+
+---
+출처:[스택오버플로우](https://stackoverflow.com/questions/912479/what-is-the-difference-between-javascript-and-ecmascript)  
+
+ECMAScript가 언어이고 JavaScript가 방언인지는 논쟁의 여지가 있지만 중요하지는 않습니다.  
+이렇게 생각하면 계속 혼란 스러울 수 있습니다.  
+ECMAScript를 실행할 컴파일러는 없으며, JavaScript는 ECMAScript라는 표준을 구현하는 언어로 간주됩니다.  
