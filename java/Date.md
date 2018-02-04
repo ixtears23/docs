@@ -41,3 +41,8 @@ public class SimpleDateFormat_01 {
 	}
 }
 ~~~
+
+
+# java.time 패키지
+##### Date와 Calendar의 단점을 해소하기 위해 JDK 1.8부터 java.time패키지가 추가 되었다.
+
