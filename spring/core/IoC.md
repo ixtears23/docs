@@ -276,7 +276,47 @@ bean 정의
 | initialization method | Initialization callbacks |
 | destruction method | Destruction callbacks |
 
+특정 bean을 작성하는 방법에 대한 정보가 들어있는 bean 정의 외에,  
+ApplicationContext 구현은 사용자가 컨테이너 외부에서 생성 된 기존 객체의 등록도 허용합니다.  
+이것은 BeanFactory 구현 DefaultListableBeanFactory를 리턴하는 getBeanFactory () 메소드를 통해  
+ApplicationContext의 BeanFactory에 액세스함으로써 이루어진다.  
+DefaultListableBeanFactory는 registerSingleton (..) 및 registerBeanDefinition (..) 메소드를 통해이 등록을 지원합니다.  
+그러나 일반적인 응용 프로그램은 메타 데이터 bean 정의를 통해 정의 된 bean에서만 작동합니다.  
 
+> Bean 메타 데이터와 수동으로 제공되는 싱글 톤 인스턴스는 자동 와이어 링 및 기타 인트로 스펙 션 단계에서  
+> 컨테이너가 컨테이너에 대해 적절히 추론 할 수 있도록 가능한 빨리 등록해야합니다.  
+> 기존 메타 데이터와 기존 싱글 톤 인스턴스의 오버라이드는 어느 정도 지원되지만,  
+> 런타임시 새 bean의 등록 (팩토리에 대한 라이브 액세스와 동시에)은 공식적으로 지원되지 않으며  
+> 콩 컨테이너에서 동시 액세스 예외 및 / 또는 불일치 상태를 유발할 수 있습니다. ?  
+
+### 1.3.1. Naming beans
+[Naming beans](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-beanname)
+모든 빈에는 하나 이상의 식별자가 있습니다.  
+이러한 식별자는 Bean을 호스팅하는 컨테이너 내에서 고유해야합니다.  
+bean은 대개 단 하나의 식별자를 가지고 있지만, 하나 이상의 식별자가 필요한 경우 여분의 식별자는 별칭으로 간주 될 수 있습니다.  
+XML 기반 구성 메타 데이터에서 id 및 / 또는 name 속성을 사용하여 bean 식별자를 지정합니다.  
+id 속성을 사용하면 정확히 하나의 id를 지정할 수 있습니다.  
+일반적으로 이러한 이름은 영숫자 ( 'myBean', 'fooService'등)이지만 특수 문자도 포함 할 수 있습니다.  
+Bean에 다른 별명을 도입하려는 경우, 이름 속성에 쉼표 (,), 세미콜론 (;) 또는 공백으로 구분하여 지정할 수 있습니다.  
+Spring 3.1 이전의 버전에서 역사적 기록으로 id 속성은 가능한 문자를 제한하는 xsd : ID 유형으로 정의되었습니다.  
+3.1부터는 xsd : string 유형으로 정의됩니다.  
+bean id 고유성은 여전히 컨테이너에 의해 시행되지만 XML 파서는 더 이상 필요하지 않습니다.  
+
+빈에 대한 이름이나 ID를 제공 할 필요는 없습니다.  
+이름이나 ID가 명시 적으로 제공되지 않으면 컨테이너는 해당 bean에 대해 고유 한 이름을 생성합니다.  
+그러나 ref 요소 나 Service Locator 스타일 조회를 사용하여 이름으로 빈을 참조하려는 경우 이름을 제공해야합니다.  
+이름을 제공하지 않는 동기화는 내부 빈을 사용하고 공동 작업자를 autowiring하는 것과 관련됩니다.  
+
+##### 빈 명명 규칙
+> 관례는 빈을 명명 할 때 인스턴스 이름과 같은 표준 Java 규칙을 사용하는 것입니다.  
+> 즉, 빈 이름은 소문자로 시작하고 이후로 camel-cased를 사용합니다.  
+> 이러한 이름의 예는 (따옴표 제외) 'accountManager', 'accountService', 'userDao', 'loginController'등입니다.  
+
+
+> Bean의 이름을 계속 지정하면 구성을보다 쉽게 읽고 이해할 수 있으며  
+> Spring AOP를 사용하는 경우 이름과 관련된 콩 세트에 조언을 적용 할 때 많은 도움이됩니다.  
+
+##### (Aliasing a bean outside the bean definition)[https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-beanname-alias]
 
 
 
