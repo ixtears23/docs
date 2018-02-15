@@ -24,3 +24,17 @@ by visiting one of the following sites:
 
 Once Eclipse/STS is installed, press enter, and we'll begin.
 
+------------------------------------------------------------------------
+STEP 1: Generate subproject Eclipse metadata
+
+The first step will be to generate Eclipse project metadata for each of
+the spring-* subprojects. This happens via the built-in "Gradle wrapper"
+script (./gradlew in this directory). If this is your first time using
+the Gradle wrapper, this step may take a few minutes while a Gradle
+distribution is downloaded for you.
+
+The command run will be:
+
+    ./gradlew --no-daemon cleanEclipse :spring-oxm:compileTestJava eclipse -x :eclipse
+
+Press enter when ready.
