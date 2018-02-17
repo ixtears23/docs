@@ -1,5 +1,5 @@
 # 1. Spring Web MVC
-1. Introduction
+**1. Introduction
 2. DispatcherServlet
 3. Filters
 4. Annotated Controllers
@@ -11,3 +11,4 @@
 10. View Technologies
 11. MVC Config
 12. HTTP/2
+**
