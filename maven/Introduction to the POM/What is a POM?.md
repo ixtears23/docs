@@ -18,6 +18,6 @@ POM을 읽고 필요한 구성 정보를 얻은 다음 목표를 실행합니다
 
 
 POM에서 지정할 수있는 구성 중 일부는 프로젝트 종속성(project dependencies),  
-실행 가능한 플러그인 또는 목표, 빌드 프로파일(build profiles) 등 입니다.  
+실행 가능한 플러그인 또는 목표, 빌드 프로파일(build profiles) 등 입니다.  
 프로젝트 버전(project version), 설명(description), 개발자(developers), 메일 링리스트(mailing lists)  
 등과 같은 기타 정보도 지정할 수 있습니다.  
