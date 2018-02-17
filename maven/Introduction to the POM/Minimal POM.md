@@ -28,9 +28,9 @@ POM의 최소 요구 사항은 다음과 같습니다.
 모든 Maven 프로젝트에는 패키징 유형이 있습니다.  
 **POM에 지정되지 않은 경우** **기본값 "jar"**가 사용됩니다.  
 
-<U>밑줄</U>
- 
- 
- 
+또한 `minimal POM` 에서는 저장소(repositories)가 지정되지 않았음을 알 수 있습니다.  
+`minimal POM`을 사용하여 프로젝트를 빌드하면 `Super POM`의 리포지토리 구성을 상속받습니다.  
+따라서 Maven이 `minimal POM`에서 종속성을 인식하면,  
+이러한 종속성은 `Super POM`에 지정된 http://repo.maven.apache.org/maven2 에서 다운로드 된다는 것을 알게됩니다.  
 
 
