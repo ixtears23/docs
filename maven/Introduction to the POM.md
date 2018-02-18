@@ -376,7 +376,7 @@ POM의 최소 요구 사항은 다음과 같습니다.
 **POM**은 **groupId, artifactId 및 version**을 구성해야합니다.  
 이러한 세 가지 값은 **프로젝트의 정규화 된 아티팩트 이름을 구성**합니다.  
 이것은 `<groupId>` : `<artifactId>` : `<version>` 형식입니다.  
-위의 예에서는 정규화 된 **아티팩트 이름**은 **"com.mycompany.app:my-app:1"**입니다.  
+위의 예에서는 정규화 된 **아티팩트 이름**은 **`com.mycompany.app:my-app:1`**입니다.  
 
 또한, 첫 번째 섹션에서 언급했듯이,  
 설정 세부 사항을 지정하지 않으면 Maven은 기본값을 사용하게 됩니다.  
