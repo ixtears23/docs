@@ -5,7 +5,7 @@
 **Core Support(핵심지원)**  
 
 ### Introduction
-**Spring Framework**는 모든 종류의 *배포 플랫폼(deployment platform)*에서  
+**Spring Framework**는 모든 종류의 *배포 플랫폼*(deployment platform)에서  
 **최신 Java 기반 엔터프라이즈 애플리케이션**을 위한 **포괄적인 프로그래밍 및 구성 모델을 제공**합니다.  
 
 #### Core technologies(핵심기술)
