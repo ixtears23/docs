@@ -10,7 +10,7 @@
 
 - **Core technologies(핵심기술)**   
   - dependency injection(의존성 주입)
-  - events
+  - events
   - resources
   - i18n
   - validation
