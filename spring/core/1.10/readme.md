@@ -15,3 +15,8 @@
 
 **대신 어노테이션 (예 : @Component), AspectJ 유형 표현식(expressions)** 또는 **사용자 정의 필터 기준을 사용**하여  
 **컨테이너에 등록 된 bean 정의를 가질 클래스를 선택할 수 있습니다.**  
+
+---
+**Spring 3.0**부터는 **Spring JavaConfig 프로젝트**가 제공하는 많은 기능들이 핵심 Spring 프레임 워크의 일부이다.  
+이를 통해 ***전통적인 XML 파일을 사용하는 대신*** **Java를 사용하여 Bean을 정의 할 수 있습니다.**  
+이러한 새로운 기능을 *사용하는 방법에 대한 예제는* **@Configuration, @Bean, @Import 및 @DependsOn 주석을 살펴보십시오.**  
