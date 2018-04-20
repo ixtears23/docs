@@ -1,0 +1,58 @@
+## 1.11.2. @Named and @ManagedBean: standard equivalents to the @Component annotation(@Named 및 @ManagedBean : @Component 주석에 대한 표준 동등 물)
+
+`@Component` 대신에 `@javax.inject.Named` 또는 `javax.annotation.ManagedBean`을 다음과 같이 사용할 수 있습니다.  
+~~~java
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named("movieListener")  // @ManagedBean("movieListener") could be used as well
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Inject
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+~~~
+
+**구성 요소의 이름을 지정하지 않고** `@Component`를 **사용**하는 것은 **매우 일반적**입니다.  
+`@Named`는 **비슷한 방식으로 사용**할 수 있습니다.  
+~~~java
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Inject
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+~~~
+
+`@Named` 또는 `@ManagedBean`을 사용할 때  
+**Spring 주석을 사용할 때**와 **똑같은 방식**으로 **구성 요소 검색을 사용**할 수 있습니다.  
+~~~java
+@Configuration
+@ComponentScan(basePackages = "org.example")
+public class AppConfig  {
+    ...
+}
+~~~
+
+---
+`@Component`와 달리 **JSR-330** `@Named` 및 **JSR-250** `ManagedBean` 주석은 **조합 할 수 없습니다.**  
+커스텀 컴포넌트 주석을 만들기 위해 **Spring의 스테레오 타입 모델을 사용하십시오.**
+
+---
+
+
