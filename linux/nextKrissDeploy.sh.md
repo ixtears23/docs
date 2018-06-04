@@ -30,7 +30,7 @@ rm에 덧붙여 사용할 수 있는 옵션에는 다음과 같은 것이 있다
 cd $krissSource
 jar -xvf $krissSource/web.krisstar-3.5.0.war
 ~~~
-#### -cvf 압축하기  
+**-cvf 압축하기**  
 tar -cvf [파일명.tar] [폴더명]  
 > tar -cvf aaa.tar abc  
 tar -zcvf [파일명.tar.gz] [폴더명]  
@@ -38,7 +38,7 @@ tar -zcvf [파일명.tar.gz] [폴더명]
 jar -cvf [파일명.jar] [폴더명]  
 > jar -xvf aaa.jar abc  
 
-#### -xvf 압출풀기  
+**-xvf 압출풀기**  
 > jar -xvf $krissSource/web.krisstar-3.5.0.war
 ~~~
 
