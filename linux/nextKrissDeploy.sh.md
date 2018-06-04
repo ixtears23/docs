@@ -47,7 +47,7 @@ cd $krissSource
 rm -f web.krisstar-3.5.0.war
 
 5. jeus7 서버 시작
-/home1/ekriss/jeus7/bin/jeusadmin -port 9700 -u administrator -p jeusadmin << EOF
+/home1/ekriss/jeus7/bin/jeusadmin -port 9700 -u administrator -p jeusadmin << EOF  
 start-server server1  
 Exit  
 EOF  
