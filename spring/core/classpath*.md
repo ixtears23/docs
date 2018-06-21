@@ -17,4 +17,20 @@
 - `ls s*f` 시작 문자가 s, 끝 문자가 f로 끝나는 파일을 모두 출력
 
 
-### classpath
+### AntPathMatcher
+
+##### Spring 5.0.7 Class AntPathMatcher
+- `?` 한 문자와 일치합니다.  
+- `*`는 0 개 이상의 문자와 일치합니다.  
+- `**` 경로의 0 개 이상의 디렉토리와 일치합니다.  
+- `{spring : [a-z] +}`는 `regexp [a-z] +`를 "spring"이라는 경로 변수와 일치시킵니다.  
+
+**example**  
+
+- `com/t?st.jsp` — `com/test.jsp`뿐만 아니라 `com/tast.jsp` 또는 `com/txst.jsp`와 일치합니다.  
+- `com/*.jsp` — `com` 디렉토리의 모든 `.jsp` 파일을 일치시킵니다.  
+- `com/**/test.jsp` — `com` 경로 아래의 모든 test.jsp 파일을 일치시킵니다.  
+- `org/springframework/**/*.jsp` — `org/springframework` 경로 아래의 모든 `.jsp` 파일을 일치시킵니다.  
+- `org/**/servlet/bla.jsp` — `org/springframework/servlet/bla.jsp`와 일치하지만  
+`org/springframework/testing/servlet/bla.jsp` 및 `org/servlet/bla.jsp`와 일치합니다.  
+- `com/{filename:\\w+}.jsp` `com/test.jsp`와 일치하고 파일 이름 변수에 값 `test`를 할당합니다.  
