@@ -1,4 +1,4 @@
-# instr()
+## INSTR()
 
 
 ~~~sql
