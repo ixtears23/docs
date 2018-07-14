@@ -34,8 +34,8 @@
  - 알림 영역의 ![whale](./img/whale-x-win.png) 고래는 **Docker가 실행 중**이며 **터미널에서 액세스 할 수 있음**을 나타냅니다.  
  
 ##### Run
- - PowerShell과 같은 명령 줄 터미널을 열고 일부 Docker 명령을 시험해보십시오!
- -`docker version` 을 실행하여 Docker Version 을 확인 합니다.
+ - PowerShell과 같은 명령 줄 터미널을 열고 일부 Docker 명령을 시험해보십시오!  
+ - `docker version` 을 실행하여 Docker Version 을 확인 합니다.  
  - `docker run hello-world` 를 실행하여 Docker가 이미지를 가져 와서 실행할 수 있는지 확인합니다.  
 
 
