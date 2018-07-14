@@ -14,3 +14,21 @@
  - Windows에서 Docker 응용 프로그램을 개발하는 가장 빠르고 안정적인 방법 입니다.  
  - Linux 및 Windows Docker 컨테이너 실행을 지원합니다.  
  
+##### Stable channel
+신뢰할 수있는 플랫폼을 사용하려면 안정적인 채널(Stable channel)을 사용하는 것이 가장 좋습니다.  
+안정적인 릴리스는 Docker 플랫폼 안정 릴리스(Stable releases)를 추적합니다.  
+사용 통계 및 기타 데이터를 보낼지 여부를 선택할 수 있습니다.  
+안정적인 릴리스는 **분기**마다 한 번 발생합니다.  
+
+##### Edge channel
+실험 기능을 더 빨리 사용하려면 Edge 채널을 사용하십시오.  
+약간의 불안정성과 버그를 피할 수 있습니다.  
+우리는 Edge 릴리스에서 사용 데이터를 수집합니다.  
+엣지 빌드는 **월 1 회** 릴리스됩니다.  
+
+[[Docker CE for Windows download Link]](https://store.docker.com/editions/community/docker-ce-desktop-windows)  
+
+##### Install
+ - 다운로드 받은 **Docker for Windows Installer**를 더블 클릭하여 설치 프로그램을 실행합니다.  
+ - 설치가 완료되면 Docker가 자동으로 시작됩니다.  
+ - 알림 영역의 고래는 **Docker가 실행 중**이며 **터미널에서 액세스 할 수 있음**을 나타냅니다.  
