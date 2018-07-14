@@ -31,4 +31,4 @@
 ##### Install
  - 다운로드 받은 **Docker for Windows Installer**를 더블 클릭하여 설치 프로그램을 실행합니다.  
  - 설치가 완료되면 Docker가 자동으로 시작됩니다.  
- - 알림 영역의 고래는 **Docker가 실행 중**이며 **터미널에서 액세스 할 수 있음**을 나타냅니다.  
+ - 알림 영역의 ![ResponseHeader](./img/whale-x-win.png) 고래는 **Docker가 실행 중**이며 **터미널에서 액세스 할 수 있음**을 나타냅니다.  
