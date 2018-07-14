@@ -39,4 +39,38 @@
  - `docker run hello-world` 를 실행하여 Docker가 이미지를 가져 와서 실행할 수 있는지 확인합니다.  
 
 
+## Fail!!
+ - Windows 용 Docker를 실행하려면 Windows 10 Pro 또는 Enterprise 버전 14393  
+ 또는 Windows Server 2016 RTM이 필요합니다.  
+ - 이전 버전의 경우 `Docker Toolbox`를 받으십시오.  
+ 
+ 
+### Docker Toolbox
+ - Docker Toolbox는 새로운 Mac 용 Mac 용 Docker  
+ 및 Windows 용 Docker 응용 프로그램의 요구 사항을 충족하지 않는  
+ 구형 Mac 및 Windows 시스템에서  
+ Docker 환경을 신속하게 설정하고 실행할 수 있도록하는 설치 프로그램입니다.  
+ 
+##### What’s in the box
+
+Toolbox에는 다음과 같은 Docker 도구가 포함되어 있습니다.  
+ - `docker-machine`명령을 실행하기위한 도커 시스템  
+ - 도커 명령을 실행하는 `Docker Engine`  
+ - `docker-compose` 명령을 실행하기 위해 Docker Compose(도커 작성)  
+ - Docker GUI 인 Kitematic  
+ - Docker 명령 줄 환경에 맞게 미리 구성된 셸  
+ - Oracle VirtualBox  
+
+Toolbox Release에서 다양한 버전의 도구를 찾거나  
+터미널에서 `--version` 플래그를 사용하여 실행할 수 있습니다. (예 : `docker-compose --version`)  
+
+[[docker Toolbox for Windows download]](https://docs.docker.com/toolbox/overview/#whats-in-the-box)
+
+위 URL부터 다시 시작.
+
+
+
+
+
+
 
