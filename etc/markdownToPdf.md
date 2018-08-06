@@ -1,6 +1,6 @@
 출처 : [[pandoc 설치]](https://github.com/jaimyoung/data-science-in-korean/blob/master/writing-korean-books-in-r-markdown.md)  
 
-(latex 설치)[https://miktex.org/download]  
+[[latex 설치]](https://miktex.org/download)  
 
 
 # pandoc + markdown 으로 한글 책 만들기
