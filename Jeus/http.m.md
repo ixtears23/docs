@@ -35,7 +35,7 @@ Client가 요구한 URL은 DOCROOT의 경로 뒤에 추가되어 실제 경로�
 JEUS Web Server는 이 경로를 가지고 파일에 접근하게 된다.   
 
 ##### 선택항목
-1)	HTH = numeric	(Default Number: 1, Max Number: 20)
+1)	HTH = numeric	(Default Number: 1, Max Number: 20)  
 JEUS Web Server에서 가장 중요한 역할을 담당하고 있는 HTH (HTTP Request Handler) Process의 개수를 설정한다.  
 HTH는 실질적으로 Client Browser와 JEUS Web Server 내부 Service Process 사이를 중계하는 Process이다.  
 즉, Client의 요청을 받아 Service를 받을 수 있도록 적당한 Process에 넘겨주고, 다시 처리된 결과를 수신하여 Client에게 되돌려 준다.  
@@ -46,7 +46,7 @@ JEUS Web Server에서는 모든 Client가 이 HTH Process에 연결되도록 설
 현재 JEUS Web Server에서는 최대 20개까지의 HTH Process를 구동하는 것이 가능하다.  
 따라서 약 16000명의 사용자를 동시에 처리하는 것이 가능하다.  
 
-2)	PORT = literal	(Default Port: 80) 
+2)	PORT = literal	(Default Port: 80)  
 JEUS Web Server의 HTTP Listener 포트 번호를 설정한다.  
 이는 기본적으로 Web Service를 하기 위해서는 반드시 필요한 설정으로, 이 항목은 반드시 설정해야 한다.  
 보통 일반적인 Web Server는 80 Port를 이용한다.  
@@ -64,24 +64,24 @@ Listen 항목에서 특정 Port를 지정하는 경우 이 Port만을 이용하�
 즉, 중요한 것은 Listen 항목에서 지정된 Port가 PORT 항목에서 지정된 것보다 우선된다는 것이다.  
 물론 Listen 항목에서도 여러 개의 Port를 지정하는 것이 가능하다. 이에 대한 예는 Listen 항목의 설명에서 할 것이다.  
 
-7)	HostName = literal
+7)	HostName = literal  
 이 항목을 설정하면 Http Response Header의 host name Field에 기록을 남겨준다.  
 JEUS Web Server 가 설치된 machine의 Domain name을 “www.tmax.co.kr”과 같이 넣어주면 된다.  
 
-8)	JSVPort = numeric 	(Default Port: 9999)
+8)	JSVPort = numeric 	(Default Port: 9999)  
 JEUS Web Server 와 Java Servlet 수행 Server간의 연결 Port 번호이다 .  
 
-20)	IndexName = literal (Default : index.html)
+20)	IndexName = literal (Default : index.html)  
 Client가 특정 파일 이름을 지정하지 않고 Service Directory에 요구를 보낼 때 기본적으로 Service되는 파일 이름을 설정한다.   
 따로 설정하지 않으면 index.html이 설정된다.    
 
-26)	Logging = literal
+26)	Logging = literal  
 뒤의 Logging절에서 설정하는 Logging Name을 써준다. 이 이름을 가지고 이 Node에서 그에 해당하는 Log를 남기게 되는 것이다.  
 
-28)	ErrorLog = literal
+28)	ErrorLog = literal  
 오류 발생시 설정하는 Logging 정보 이름을 써준다. 이 이름 또한 뒤의 Logging절에서 설정하는 Logging Name을 써준다.  
 
-4.3.3	SVRGROUP 절
+4.3.3	SVRGROUP 절  
 JEUS Web Server 를 통해 응용 Server Process를 접근하는 경우  
 Server Process의 논리적인 연관성에 따라 이들을 그룹으로 관리할 필요가 있게 된다.  
 이 절에서는 이러한 그룹에 대한 환경 설정이 이루어 진다. Node 이름, Server의 종류, 호스트의 이름 등을 등록한다.   
@@ -109,7 +109,7 @@ Server Group이 존재하는 Node를 정의한다.
 Server Group의 속성, 즉 어떠한 Service를 제공하는가를 명시한다.  
 Server 타입으로 HTML, CGI, JSV, WEBSTD, TPSTD, SSI 등을 명시할 수 있다.  
 
-4.3.4	SERVER 절
+4.3.4	SERVER 절  
 SERVER절에서는 실질적으로 제공하는 Service들을 등록한다.  
 JEUS Web Server 는 등록된 Service만을 처리하기 때문에  
 새로운 Server 프로그램이 추가되는 경우 Server절의 환경파일에 반드시 등록하여야 한다.  
