@@ -20,8 +20,8 @@ putty 또는 Xshell5 접속
   - JEUS_HOME\config\<node-name>\JEUSMain.xml
 
 - WEBMain.xml 경로  
-  - JEUS_HOME\config\<node-name>\<node-name>\_servlet_<engine-name1>\WEBMain.xml
-  - JEUS_HOME\config\<node-name>\<node-name>\_servlet_<engine-name2>\WEBMain.xml
+  - JEUS_HOME\config\<node-name>\<node-name>\_servlet\_<engine-name1>\WEBMain.xml
+  - JEUS_HOME\config\<node-name>\<node-name>\_servlet\_<engine-name2>\WEBMain.xml
 
 
 `WEBMain.xml`은 JEUSMain.xml에 추가된 JEUS 웹 컨테이너를 설정하는 파일로 웹 컨테이너의 설정 디
