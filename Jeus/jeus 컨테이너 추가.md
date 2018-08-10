@@ -24,6 +24,13 @@ putty 또는 Xshell5 접속
 - 현재 Jeus License 남은 일자 확인  
 -> jeusadmin -licensedue  
 
+#### Jeus WebAdmin 경로
+`/home1/ekriss/jeus7/domains/domain1/config/domain.xml`  
+listen-port 를 확인한다.  
+~~~
+<server>
+  <listen-port>9700
+~~~
 
 
 
