@@ -13,8 +13,21 @@ putty 또는 Xshell5 접속
 예)  
 -> `echo $JEUS_HOME`  
 
-#### 컨테이너 설정
+#### Jeus 명령어
 
+- 현재 jeus 버전 확인  
+-> jeusadmin -version  
+- 현재 jeus 풀버전 확인  
+-> jeusadmin -fullversion  
+- 현재 webtob 버전 확인  
+-> wscfl -version  
+- 현재 Jeus License 남은 일자 확인  
+-> jeusadmin -licensedue  
+
+
+
+
+#### 컨테이너 설정
 
 - JEUSMain.xml 경로  
   - `JEUS_HOME\config\<node-name>\JEUSMain.xml`  
