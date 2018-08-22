@@ -3,4 +3,4 @@
 ### sonatype - nexus
 
 
-[[maven 저장소]](https://search.maven.org/)
+[[Central Repository]](https://search.maven.org/)
