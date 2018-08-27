@@ -12,8 +12,7 @@ tomcat 서버 파일 수정
 
 ### server.xml
 
-`GlobalNamingResources` 태그안에  
-`Resource` 추가  
+ - `<GlobalNamingResources>` 태그안에 `<Resource>` 추가  
 
 ~~~xml
 <Resource auth="Container" defaultAutoCommit="false" driverClassName="com.tmax.tibero.jdbc.TbDriver"
@@ -26,6 +25,25 @@ tomcat 서버 파일 수정
 ### context.xml
 ![toacat서버](./img/context.xml.GIF "context.xml")  
 
+ - `<ResourceLink>` 추가  
+~~~xml
+<ResourceLink global="jdbc/homepageDS" name="jdbc/homepageDS" type="javax.sql.DataSource"/>
+~~~
+
 ### web.xml
+
+- `<resource-ref>` 추가  
+
+~~~xml
+	<resource-ref>
+		<description>Tibero DataSource</description>
+		<res-ref-name>jdbc/homepageDS</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+~~~
+
 ![toacat서버](./img/web.xml.GIF "web.xml")  
+
+
 
