@@ -1,8 +1,8 @@
+## tibero DB tomcat 서버 설정
 
 
-
-### 서버폴더파일목록
-![toacat서버](./img/server.GIF "서버폴더파일목록")  
+### 톰캣서버폴더 파일목록
+![서버폴더파일목록](./img/server.GIF "서버폴더파일목록")  
 
 tomcat 서버 파일 수정
  - server.xml
@@ -20,15 +20,16 @@ tomcat 서버 파일 수정
             type="javax.sql.DataSource" url="jdbc:tibero:thin:@ip:port:sid" username="username"/>
 ~~~
 
-![toacat서버](./img/server.xml.GIF "server.xml")  
+![server.xml](./img/server.xml.GIF "server.xml")  
 
 ### context.xml
-![toacat서버](./img/context.xml.GIF "context.xml")  
 
  - `<ResourceLink>` 추가  
 ~~~xml
 <ResourceLink global="jdbc/homepageDS" name="jdbc/homepageDS" type="javax.sql.DataSource"/>
 ~~~
+
+![context.xml](./img/context.xml.GIF "context.xml")  
 
 ### web.xml
 
@@ -43,7 +44,7 @@ tomcat 서버 파일 수정
 	</resource-ref>
 ~~~
 
-![toacat서버](./img/web.xml.GIF "web.xml")  
+![web.xml](./img/web.xml.GIF "web.xml")  
 
 
 
