@@ -1,6 +1,6 @@
 ## 단축키
 
-~~~
+~~~javascript
 Ctrl+Shift+Y,X 대소문자
 
 
