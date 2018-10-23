@@ -48,9 +48,14 @@
   }
 ```
 
+- MultipartEntityBuilder  
+- ContentType: application/octet-stream  
+
 ~~~java
 
   public SiteRegistVO siteRegist(HashMap<String, Object> params) throws MalformedURLException, URISyntaxException, IOException, Exception {
+  
+        SiteRegistVO result = new SiteRegistVO();
   
         MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
         multipartEntityBuilder.addTextBody("_method", "PUT", ContentType.TEXT_PLAIN.withCharset("UTF-8"));
@@ -87,10 +92,4 @@
         return result;
         
   }
-        
-        
-        
-
-
-
 ~~~
