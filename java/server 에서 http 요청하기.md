@@ -1,14 +1,20 @@
 
 
-- 방법
-  - HttpClient
-  - HttpURLConnection
+# server에서 http요청하는 방법
+
+- HttpClient  
+- HttpURLConnection
   
 ---
   
-> sample 예외처리는 제외   
+  
+> 아주 간단한 sample 코드  
+> 예외처리, close resource 제외  
 
-##### 
+- CloseableHttpClient
+  - RequestBuilder  
+  - ContentType: application/xml 
+
 ```java
 
   import java.net.MalformedURLException;
@@ -48,8 +54,9 @@
   }
 ```
 
-- MultipartEntityBuilder  
-- ContentType: application/octet-stream  
+- CloseableHttpClient
+  - MultipartEntityBuilder  
+  - ContentType: application/octet-stream  
 
 ~~~java
 
