@@ -6,9 +6,10 @@
   
 ---
   
-### sample 예외처리는 제외   
+> sample 예외처리는 제외   
 
-~~~java
+##### 
+```java
 
   import java.net.MalformedURLException;
   import java.net.URISyntaxException;
@@ -45,4 +46,49 @@
         
         return result;
   }
+```
+
+~~~java
+
+  public SiteRegistVO siteMod() throws MalformedURLException, URISyntaxException, IOException, Exception {
+  
+        MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
+        multipartEntityBuilder.addTextBody("_method", "PUT", ContentType.TEXT_PLAIN.withCharset(authorVo.getCharset()));
+
+        for (Entry<String, Object> iterable_element : params.entrySet()) {
+            if (String.valueOf(iterable_element.getValue()) != null && !"".equalsIgnoreCase(String.valueOf(iterable_element.getValue())) && !"null".equalsIgnoreCase(String.valueOf(iterable_element.getValue()))) {
+                multipartEntityBuilder.addTextBody(iterable_element.getKey(), String.valueOf(iterable_element.getValue()), ContentType.TEXT_PLAIN.withCharset(authorVo.getCharset()));
+            }
+        }
+        
+        File dir = new File(String.format("%s%s", fileRoot, paramImg.getStreCours()));
+        byte[] data;
+        
+        if (dir.isDirectory()) {
+            data = fileToByte(new File(String.format("%s%s%s", fileRoot, paramImg.getStreCours(), paramImg.getStreFileNm())));
+        }
+        
+        paramImg.setFileData(data);
+        
+        multipartEntityBuilder.addBinaryBody("fileData", paramImg.getFileData(), ContentType.create("application/octet-stream"), URLEncoder.encode(paramImg.getOrginlFileNm(), authorVo.getCharset()));
+        
+        CloseableHttpClient http = HttpClients.createDefault();
+        
+        HttpPost post = new HttpPost();
+        post.setEntity(multipartEntityBuilder.build());
+        post.setURI(new URI(String.format("%s%s/%s/%s", authorVo.getServiceUrl(), serviceName, equipId, authorVo.getCrtfcheight())));
+        CloseableHttpResponse response = http.execute(post);
+        
+        HttpEntity entity = response.getEntity();
+        String requestBody = EntityUtils.toString(entity, Charset.forName("UTF-8"));
+        result = new Gson().fromJson(requestBody, SiteRegistVO.class);
+        return result;
+        
+  }
+        
+        
+        
+
+
+
 ~~~
