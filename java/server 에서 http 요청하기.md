@@ -2,7 +2,9 @@
 
 # server에서 http요청하는 방법
 
-- HttpClient  
+- [HttpClient](https://hc.apache.org/httpcomponents-client-ga/index.html)  
+  - [mavenDependency](https://hc.apache.org/httpcomponents-client-ga/httpclient/dependency-info.html)
+  - [Quick Start](https://hc.apache.org/httpcomponents-client-ga/quickstart.html)
 - HttpURLConnection
   
 ---
