@@ -102,3 +102,77 @@
         
   }
 ~~~
+
+
+
+- CloseableHttpClient
+  - RequestBuilder  
+  - [kakao 로컬 주소 검색](https://developers.kakao.com/docs/restapi/tool#local-api)
+
+~~~java
+
+@Service
+public class HttpRequest {
+	
+	private static Logger logger = LoggerFactory.getLogger(HttpRequest.class);
+	
+	private final String API_KEY = "apikey";
+	
+	public Map<String, Object> textRequest() {
+		
+		
+		Map<String, Object> map = new HashMap<>();
+		CloseableHttpResponse response = null;
+		
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		
+		String url = "https://dapi.kakao.com/v2/local/search/address.json";
+		
+		RequestBuilder requestBuilder;
+		try {
+			String query = URLEncoder.encode("대전", "UTF-8");
+			requestBuilder = RequestBuilder.get(new URI(String.format("%s?query=%s", url, query)));
+			requestBuilder.setCharset(Charset.forName("UTF-8"));
+			requestBuilder.setHeader("Authorization", String.format("KakaoAK %s", API_KEY));
+			
+			
+			HttpUriRequest request = requestBuilder.build();
+			
+			response = httpClient.execute(request);
+			HttpEntity entity = response.getEntity();
+			String entityString = EntityUtils.toString(entity);
+			JSONObject result = new JSONObject(entityString);
+			
+			
+			EntityUtils.consume(entity);
+			
+			
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+			logger.debug("URISyntaxException ::: {}", e.getMessage());
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+			logger.debug("UnsupportedEncodingException ::: {}", e.getMessage());
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+			logger.debug("ClientProtocolException ::: {}", e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.debug("IOException ::: {}", e.getMessage());
+		} finally {
+			try {
+				response.close();
+				httpClient.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+				logger.debug("IOException ::: {}", e.getMessage());
+			}
+		}
+
+		
+		return map;
+	}
+
+}
+
+~~~
