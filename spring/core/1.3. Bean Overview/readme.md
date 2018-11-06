@@ -30,8 +30,7 @@
 
 
 `ApplicationContext` 구현은 컨테이너 외부에서 작성된 기존 객체의 등록을 허용 합니다.
-이것은 `BeanFactory` `DefaultListableBeanFactory` 구현을 리턴하는 `getBeanFactory()` 메소드를 통해  
-`ApplicationContext`의 `BeanFactory`에 액세스함으로써 수행된다.  
+이것은 `BeanFactory` `DefaultListableBeanFactory` 구현을 리턴하는 `getBeanFactory()` 메소드를 통해  `ApplicationContext`의 `BeanFactory`에 액세스함으로써 수행된다.  
 `DefaultListableBeanFactory`는 `registerSingleton(..)` 및 `registerBeanDefinition(..)` 메소드를 통해 이 등록을 지원합니다.  
 그러나 일반적인 응용 프로그램은 `Bean` 정의 메타 데이터를 통해 정의 된 `Bean`에서만 작동합니다.  
 
