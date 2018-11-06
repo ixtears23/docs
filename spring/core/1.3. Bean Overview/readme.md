@@ -1,5 +1,5 @@
 ##### version: 5.1.2.RELEASE
-[출처](https://docs.spring.io/spring/docs/5.1.2.RELEASE/spring-framework-reference/core.html#beans-definition)
+[Spring Reference](https://docs.spring.io/spring/docs/5.1.2.RELEASE/spring-framework-reference/core.html#beans-definition)
 
 ## 1.3. Bean 개요
 > 개요: 간결하게 추려 낸 주요 내용.
