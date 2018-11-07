@@ -1,6 +1,6 @@
 ##### version: 5.1.2.RELEASE
-[Spring Reference 1.4. Dependencies]
-(https://docs.spring.io/spring/docs/5.1.2.RELEASE/spring-framework-reference/core.html#beans-dependencies)
+
+[Spring Reference 1.4. Dependencies](https://docs.spring.io/spring/docs/5.1.2.RELEASE/spring-framework-reference/core.html#beans-dependencies)
 
 ## 1.4. 의존성
 
