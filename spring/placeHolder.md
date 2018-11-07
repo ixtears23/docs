@@ -21,4 +21,5 @@
 **`#{systemProperties['SYSTYPE']}` 으로 읽을 수 있다.**  
 
 
+-D 를 붙이는 이유 [stackoverflow](https://stackoverflow.com/questions/44745261/why-do-jvm-arguments-start-with-d)
 
