@@ -5,11 +5,17 @@
 
 ### 문제 확인
 
+- 기존 Maven Build Golas (문제 없음)
+![mavenBuild](./img/mavenBuild.GIF)
+
+- Maven Gols 에 pmd, findbugs Build 추가 (OutOfMemory 발생)
+![withFindBugBuild](./img/withFindBugBuild.GIF)
+
 - Build 중인 console 창 확인  
 ![콘솔](./img/콘솔.GIF)
 
 - OutOfMemory 발생  
-![findBug 에러](./img/findBug 에러.GIF)  
+![findBug에러](./img/findBug에러.GIF)  
 
 
 ### 해결
@@ -25,7 +31,7 @@
 #### Jenkins 에서 Maven 빌드시 Maven_OPTS 메모리 값 할당
 
 - Jenkins 관리에서 시스템 설정 확인  
-![jenkins 관리](./img/jenkins 관리.GIF)
+![jenkins관리](./img/jenkins관리.GIF)
 
 - 시스템 관리에서 Maven 설정 부분 확인 (Maven Installations... 클릭)
 ![시스템관리](./img/시스템관리.GIF)
@@ -34,4 +40,4 @@
 ![시스템관리_Maven](./img/시스템관리_Maven.GIF)
 
 
-
+**문제 해결 완료**
