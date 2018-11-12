@@ -28,7 +28,7 @@
 - JAVA_OPTS 값 변경  
 ![start_bat](./img/start_bat.GIF)
 
-#### Jenkins 에서 Maven 빌드시 Maven_OPTS 메모리 값 할당
+#### Jenkins 에서 Maven 빌드시 Maven_OPTS 메모리 값 설정
 
 - Jenkins 관리에서 시스템 설정 확인  
 ![jenkins관리](./img/jenkins관리.GIF)
@@ -39,5 +39,20 @@
 - Global MAVEN_OPTS 에 Maven 빌드 시 메모리 값 설정  
 ![시스템관리_Maven](./img/시스템관리_Maven.GIF)
 
+#### Maven 빌드 중 Findbugs 빌드 시 메모리 값 설정
+- 기존 findbugs-maven-plugin 설정  
+![기존Pom](./img/기존Pom.GIF)
 
-**문제 해결 완료**
+- findbugs-maven-plugin 설정에서 maxHeap 값을 추가해서 메모리 설정  
+![Pom메모리추가](./img/Pom메모리추가.GIF)
+
+
+
+
+**결론**  
+**아래와 같이 메모리 설정해서 OutOfMemory 문제 해결**
+- **Jenkins** 서버 메모리 **1024**  
+- **Maven Build** 메모리 **512**  
+- **Findbugs Plugin** 메모리 **2048**  
+
+**※ 참고 : 해당 서버의 총 메모리는 4G**  
