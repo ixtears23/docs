@@ -5,10 +5,10 @@
 
 ### 문제 확인
 
-- 기존 Maven Build Golas (문제 없음)
+- 기존 Maven Build Goals (문제 없음)
 ![mavenBuild](./img/mavenBuild.GIF)
 
-- Maven Gols 에 pmd, findbugs Build 추가 (OutOfMemory 발생)
+- Maven Goals 에 pmd, findbugs Build 추가 (OutOfMemory 발생)
 ![withFindBugBuild](./img/withFindBugBuild.GIF)
 
 - Build 중인 console 창 확인  
@@ -33,7 +33,7 @@
 - Jenkins 관리에서 시스템 설정 확인  
 ![jenkins관리](./img/jenkins관리.GIF)
 
-- 시스템 관리에서 Maven 설정 부분 확인 (Maven Installations... 클릭)
+- 시스템 설정에서 Maven 설정 부분 확인 (Maven Installations... 클릭)
 ![시스템관리](./img/시스템관리.GIF)
 
 - Global MAVEN_OPTS 에 Maven 빌드 시 메모리 값 설정  
