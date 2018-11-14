@@ -23,7 +23,7 @@ Maven 단계는 Maven 빌드 수명주기 의 단계를 나타냅니다.
 - deploy : 패키지를 원격 저장소에 복사합니다.  
 
 단계는 특정 순서로 실행됩니다. 즉, 다음 명령을 사용하여 특정 단계를 실행하면 :  
-~~~
+~~~console
 mvn <PHASE>
 ~~~
 이렇게하면 지정된 단계가 실행될뿐만 아니라 모든 이전 단계가 실행됩니다.  
@@ -31,7 +31,7 @@ mvn <PHASE>
 
 배포 단계(deploy Phase)를 실행하는 경우 : 기본 빌드 수명주기의 마지막 단계  
 배포 단계 이전의 모든 단계가 실행됩니다.... 
-~~~
+~~~console
 mvn deploy
 ~~~
 
@@ -48,29 +48,29 @@ mvn deploy
  - jar:jar and war:war - 패키지 단계에 바인딩 됨.  
 
 우리는 다음 명령을 사용하여 특정 단계와 그 플러그인에 묶여있는 모든 목표를 나열 할 수 있습니다.
-~~~
+~~~console
 mvn help:describe -Dcmd=PHASENAME
 ~~~
 
 예를 들어, 컴파일 단계에 속한 모든 목표를 나열하려면 다음을 실행할 수 있습니다.
-~~~
+~~~console
 mvn help:describe -Dcmd=compile
 ~~~
 
 ### 메이븐 플러그인 
 
 다음 명령을 사용하여 특정 플러그인의 모든 목표 를 나열 할 수 있습니다 .
-~~~
+~~~console
 mvn <PLUGIN>:help
 ~~~
 
 예를 들어, Failsafe 플러그인의 모든 목표를 나열하려면 다음을 입력하십시오.
-~~~
+~~~console
 mvn failsafe:help
 ~~~
 
 예를 들어 Failsafe 플러그인에서 통합 테스트 목표를 실행하려면 다음을 실행해야합니다.
-~~~
+~~~console
 mvn failsafe:integration-test
 ~~~
 
@@ -78,28 +78,28 @@ mvn failsafe:integration-test
 
 Maven 프로젝트를 빌드하려면 다음 단계 중 하나를 실행하여 라이프 사이클 중 하나를 실행해야합니다.  
 
-~~~
+~~~console
 mvn deploy
 ~~~
 그러면 전체 기본 수명주기 가 실행됩니다 . 또는 설치 단계 에서 멈출 수 있습니다 .  
-~~~
+~~~console
 mvn install
 ~~~
 하지만 대개 다음 명령을 사용합니다.
-~~~
+~~~console
 mvn clean install
 ~~~
 새 빌드 전에 깨끗한 라이프 사이클 을 실행하여 프로젝트를 먼저 정리합니다 .  
 
 
 플러그인의 특정 목표 만 실행할 수도 있습니다.
-~~~
+~~~console
 mvn compiler:compile
 ~~~
 
 
 단계 또는 목표를 지정하지 않고 Maven 프로젝트를 빌드하려고하면 오류가 발생합니다.
-~~~
+~~~console
 [ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal
 ~~~
 
