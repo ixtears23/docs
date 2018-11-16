@@ -35,3 +35,36 @@ DAO, 유틸리티 및 서비스를 build합니다.
 
 
 
+#### 사용가능한 lifecycle phase
+- validate : 설명 필요
+- initialize : 설명 필요
+- generate:sources : 설명 필요
+- process:sources : 설명 필요
+- generate:resources : 설명 필요
+- process:resources : 설명 필요
+- compile : 설명 필요
+- process:classes : 설명 필요
+- generate:test:sources : 설명 필요
+- process:test:sources : 설명 필요
+- generate:test:resources : 설명 필요
+- process:test:resources : 설명 필요
+- test:compile : 설명 필요
+- process:test:classes : 설명 필요
+- test : 설명 필요
+- prepare:package : 설명 필요
+- package : 설명 필요
+- pre:integration:test : 설명 필요
+- integration:test : 설명 필요
+- post:integration:test : 설명 필요
+- verify : 설명 필요
+- install : 설명 필요
+- deploy : 설명 필요
+- pre:site : 설명 필요
+- site : 설명 필요
+- post:site : 설명 필요
+- site:deploy : 설명 필요
+- pre:clean : 설명 필요
+- clean : 설명 필요
+- post:clean : 설명 필요
+
+
