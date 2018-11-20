@@ -4,6 +4,9 @@
 
 Xshell5 로 접속
 
+- jeuslicense 확인
+`jeusadmin -licensedue`  
+
 
 - 환경변수 확인  
 `printenv` 명령어 실행  
