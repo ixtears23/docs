@@ -47,8 +47,9 @@ Xshell5 로 접속
   
 
 ### ManagedServer 실행/종료
- - jeusadmin 에 접속하지 않고 실행하는 방법  
-`startManagedServer -domain domain명 -u user명 -p password`  
+ - 실행  
+   - jeusadmin 에 접속하지 않고 실행하는 방법  
+     -  `startManagedServer -domain domain명 -u user명 -p password`  
 
 
 ### nodeManager 실행
