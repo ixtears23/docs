@@ -31,14 +31,22 @@
 수정할 목록은 아래와 같습니다.
  - ServerRoot  
  ![apache](https://github.com/ixtears23/docs/blob/master/webserver/apache/img/apache03.PNG?raw=true)
- - ListenPort
+ - ListenPort  
  ![apache](https://github.com/ixtears23/docs/blob/master/webserver/apache/img/apache04.PNG?raw=true)
- - ServerName
+ - ServerName  
  ![apache](https://github.com/ixtears23/docs/blob/master/webserver/apache/img/apache05.PNG?raw=true)
- - DocumentRoot
-![apache](https://github.com/ixtears23/docs/blob/master/webserver/apache/img/apache06.PNG?raw=true)
+ - DocumentRoot  
+![apache](https://github.com/ixtears23/docs/blob/master/webserver/apache/img/apache06.PNG?raw=true)  
 
+---
 
+7. 환경변수 Path 추가 합니다.  
+환경변수 Path에 `C:/Apache24/bin` 을 추가 합니다.  
 
+8. httpd 를 설치 합니다. 
+명령프롬프트에서 `httpd -k install` 을 실행 합니다.  
+![apache](https://github.com/ixtears23/docs/blob/master/webserver/apache/img/apache10.PNG?raw=true)  
 
-
+9. apache server를 실행 합니다.  
+명령프롬프트에서 `httpd -k start` 를 실행 합니다.  
+![apache](https://github.com/ixtears23/docs/blob/master/webserver/apache/img/apache11.PNG?raw=true)  
