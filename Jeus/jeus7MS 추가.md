@@ -4,7 +4,7 @@
 
 Xshell5 로 접속
 
-- jeuslicense 확인
+- jeuslicense 확인  
 `jeusadmin -licensedue`  
 
 
@@ -36,8 +36,26 @@ startDomainAdminServer -u user -p passwod
 `stop-server server명`  
 
 
-### node 확인
+- node 확인
 노드 전체 확인: `list-nodes`  
 특정 노드 확인: `show-node node명`  
 
+
+### webAdminServer 실행/종료
+
+- 실행  
+  - `dsboot`  
+  - `startDomainAdminServer -domain domain1 -u administrator -p administrator`  
+  
+- 종료  
+  - `stopServer -host 203.254.160.35:9700 -u administrator -p administrator`  
+  
+
+### ManagedServer 실행/종료
+ - jeusadmin 에 접속하지 않고 실행하는 방법  
+`startManagedServer -domain domain명 -u user명 -p password`  
+
+
+### nodeManager 실행
+`startNodeManager` 명령어 실행  
 
