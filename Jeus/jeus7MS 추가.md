@@ -19,14 +19,6 @@ Xshell5 로 접속
   - jeus 관련 명령어 위치  
   `${JEUS_HOME}`/bin  
 
-
-
-### node 확인
-`jeusadmin -port 9700 -u administrator -p administrator` 입력해서 DAS 접속 후  
-  - 노드 전체 확인: `list-nodes`  
-  - 특정 노드 확인: `show-node node명`  
-
-
 ### webAdminServer 실행/종료
 
 - 실행  
@@ -41,7 +33,7 @@ Xshell5 로 접속
  - 실행  
    - jeusadmin 에 접속하지 않고 실행하는 방법  
    `startManagedServer -domain domain명 -u user명 -p password`  
-   - jeusadmin 접속해서 실행
+   - jeusadmin 접속해서 실행  
    `jeusadmin -port 9700 -u administrator -p administrator` 입력해서 접속  
    `start-server server명`  
    
@@ -54,6 +46,10 @@ Xshell5 로 접속
    
 
 
-### nodeManager 실행
-`startNodeManager` 명령어 실행  
+
+### node 확인
+`jeusadmin -port 9700 -u administrator -p administrator` 입력해서 DAS 접속 후  
+  - 노드 전체 확인: `list-nodes`  
+  - 특정 노드 확인: `show-node node명`  
+
 
