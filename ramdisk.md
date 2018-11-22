@@ -4,4 +4,4 @@
 
 [imdisk 다운로드](http://www.ltr-data.se/opencode.html/#ImDisk)
 
-![imdisk]()
+![imdisk](https://github.com/ixtears23/docs/blob/master/img/imdisk.PNG?raw=true)
