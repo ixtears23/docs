@@ -274,9 +274,19 @@ HiddenHttpMethodFilter는 Spring Security 필터 앞에 위치해야합니다.
 일반적으로 이것은 사실이지만 CSRF 공격으로부터 보호 할 때 추가적인 의미를 가질 수 있습니다.  
 
 HiddenHttpMethodFilter는 POST에서 HTTP 메서드를 재정의하므로 실제적인 문제는 거의 발생하지 않을 것입니다.  
-그러나 Spring Security의 필터 앞에 배치하는 것이 가장 좋습니다.
+그러나 Spring Security의 필터 앞에 배치하는 것이 가장 좋습니다.  
 
 
+#### Overriding Defaults  
+
+스프링 시큐리티의 목표는 악용으로부터 사용자를 보호하는 기본값을 제공하는 것입니다.  
+그렇다고해서 모든 기본값을 받아 들여야 만한다는 것은 아닙니다.  
+
+예를 들어 사용자 지정 CsrfTokenRepository를 제공하여 CsrfToken이 저장된 방식을 재정의 할 수 있습니다.  
+또한 사용자 정의 RequestMatcher를 지정하여 CSRF로 보호되는 요청을 판별 할 수 있습니다 (로그 아웃이 악용되는 경우 상관하지 않음).  
+간단히 말해서, Spring Security의 CSRF 보호가 원하는대로 정확하게 작동하지 않으면, 동작을 사용자 정의 할 수 있습니다.  
+Java 구성을 사용할 때 이러한 사용자 지정을 수행하는 방법에 대한 자세한 내용은  
+XML로 이러한 사용자 지정을 만드는 방법과 CsrfConfigurer javadoc에 대한 자세한 내용은 "<csrf>"절을 참조하십시오.  
 
 
 
