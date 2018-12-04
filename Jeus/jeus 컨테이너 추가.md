@@ -13,6 +13,10 @@ putty 또는 Xshell5 접속
 예)  
 -> `echo $JEUS_HOME`  
 
+
+#### 용량 확인
+-> `df -h`  
+
 #### Jeus 명령어
 
 - 현재 jeus 버전 확인  
