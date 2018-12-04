@@ -1,47 +1,29 @@
-호준아 한번 해봤는데
 
-Jenkins 개발서버(dev)에 test 하나 만들었어.
 
-그래서 빌드 했더니 빌드 성공했어 eshop
-그리고 35번 서버에/home1/ekriss/eshop 폴더 만들었어
+35번 서버
+/home1/ekriss/webtob/config 폴더
+http.m 파일
 
-빌드하고나서 /home1/ekriss/eshop 폴더에 web.eshop-3.5.0.war 파일까지는 떨궜고.
-war는 자동으로 안풀고 일단은 jar -xvf web.eshop-3.5.0.war 로 풀은거야.
+수정하고 /home1/ekriss/webtob/config 경로에서
+wscfl -i http.m 실행
 
-그리고 jeus에 server3 만들어놨어
 
-application 이랑 같이 올리기전에 server3만 올렸을 때는 정상적으로 RUNNING 됐었는데
-application 같이 올리니까 STANDBY 떨어졌어
+The license has expired. Expiration=2018/06/23 
+ 라이센스 만료 컴파일 에러
 
-추측이긴 한데 webtob 컴파일이 안되서 그런걸까 ... 라는 생각이 ㅋㅋㅋㅋ
-
-35번 서버에
-/home1/ekriss/webtob/config 폴더 들어가면
-http.m 파일 있어
-
-이걸 수정하고 /home1/ekriss/webtob/config 경로에서
-wscfl -i http.m 실행하면
-The license has expired. Expiration=2018/06/23 이라고 떠
- 라이센스 만료되서 컴파일이 안되나바
 
 컴파일이 된다면 순서는
 wsdown 명령어로 WebToB 다운시키고
-wscfl -i http.m 이거 실행해서 컴파일 시키고
-wsboot 시작해서 WebToB 올리면 된댕 ㅋㅋㅋ
-
-
-http.m 파일 수정한거는 파일 첨부했어 ㅋㅋ
-
-35번서버에 있는 http.m 은 수정한 파일로 올렸다가 다시 원복해놨어 ㅋㅋ
+wscfl -i http.m 실행해서 컴파일
+wsboot 시작해서 WebToB 가동
 
 webtob 라이센스 경로 - /home1/ekriss/webtob/license
 데모 라이센스 기간은 두달
 
-맞다 http.m 파일 컴파일 하면 해당경로에있는 wsconfig 파일로 떨어짐
+http.m 파일 컴파일 하면 해당경로에있는 wsconfig 파일로 떨어짐
 
 
 컴파일하기 전에 기존 http.m이랑 wsconfig 파일 백업
-
 
 
 1. webtob 라이센스 갱신
@@ -55,7 +37,7 @@ webtob 라이센스 경로 - /home1/ekriss/webtob/license
 eshopdev.kriss.re.kr:80
 
 
- 알고 있을것 같지만 혹시 해서 webadmin 접속정보
+webadmin 접속정보
 http://203.254.160.35:9700/webadmin/
  id: administrator
  pw: administrator
