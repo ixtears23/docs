@@ -44,7 +44,7 @@ WebtoB 4.x 모든 버전에서 설정 가능.
 `*SSL.RequiredCiphers` 에 `"!RC4"` 설정을 추가하면 됩니다.  
 ex) 한국전자인증 권고값 `"HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:!3DES"` 으로 적용  
 WebtoB 5.0 부터는 RC4 를 차단하는 것을 기본으로 설정.  
-`*SSL.RequiredCiphers` 기본값 : `"HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:!3DES"  
+`*SSL.RequiredCiphers` 기본값 : `"HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:!3DES"`  
 
 
 - 참고  
