@@ -61,9 +61,9 @@
              RequiredCiphers = "HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:3DES"
 ~~~
 
-> 동일한 서버에 SSL 포트는 공유가 되지 않습니다. 그래서 동일 서버에서 여러개의 도메인에 SSL을 적용할 경우 443, 444, 445 ...  
-> 이런식으로 각각 다른 포트를 사용해야 합니다. 만약 동일포트를 사용해야 할 경우 SNI(Server Name Indication)을 사용해야 합니다.  
-> [위키피디아 SNI 참고](https://ko.wikipedia.org/wiki/%EC%84%9C%EB%B2%84_%EB%84%A4%EC%9E%84_%EC%9D%B8%EB%94%94%EC%BC%80%EC%9D%B4%EC%85%98)  
+> 동일한 서버에 SSL 포트는 공유가 되지 않습니다. 그래서 동일 서버에서 여러개의 도메인에 SSL을 적용할 경우 443, 444, 445 ...
+이런식으로 각각 다른 포트를 사용해야 합니다. 만약 동일포트를 사용해야 할 경우 SNI(Server Name Indication)을 사용해야 합니다. 
+[위키피디아 SNI 참고](https://ko.wikipedia.org/wiki/%EC%84%9C%EB%B2%84_%EB%84%A4%EC%9E%84_%EC%9D%B8%EB%94%94%EC%BC%80%EC%9D%B4%EC%85%98)  
 
 
 - RequiredCiphers 를 적용한 이유  
