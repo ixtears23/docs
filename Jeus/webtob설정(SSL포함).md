@@ -21,6 +21,16 @@
 `> wsboot`  
 
 - http.m 파일 ssl 적용  
+  - 인증서 발급  
+  newreq.pem, 도메인.p7b  
+  - 도메인.p7b 파일 openssl을 사용해서 cert.pem 파일로 변환  
+  `openssl pkcs7 -in www.gpki.go.kr.p7b -out cert.pem -print_certs -text`  
+  - cert.pem 파일에서 특정 내용 복사해서 caChain.pem 파일로 생성  
+  Certificate 라는 문구가 3번 나옴. 여기서 두번째 Certificate 부터 마지막까지 복사해서 caChain.pem 파일로 생성  
+  - 폐쇄망의 경우 유효성 검사 ip, port를 연다.(outbound?)  
+  - 폐쇄망의 경우 서버에서 https 를 적용하는 포트 (예:443) 을 연다.  
+
+
   - ssl 관련 파일 저장  
   cert.pem, newreq.pem, caChain.pem  
 ~~~linux
