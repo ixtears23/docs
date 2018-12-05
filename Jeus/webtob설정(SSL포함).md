@@ -23,7 +23,7 @@
 - webtob VHOST 적용 시 도메인 발급  
   - 폐쇄망의 경우 담당자에게 해당 도메인 발급을 요청한다.  
 
-- http.m 파일 ssl 적용  
+- webtob ssl 적용  
   - 인증서 발급  
   newreq.pem, 도메인.p7b  
   - 도메인.p7b 파일 openssl을 사용해서 cert.pem 파일로 변환  
@@ -36,6 +36,7 @@
 
   - ssl 관련 파일 저장  
   cert.pem, newreq.pem, caChain.pem  
+  - http.m 설정 파일에 ssl 설정 추가  
 ~~~linux
 *NODE        PORT = "80,443"
 
