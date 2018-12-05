@@ -24,16 +24,16 @@
   - ssl 관련 파일 저장  
   cert.pem, newreq.pem, caChain.pem  
 ~~~linux
-*NODE      PORT = "80,443"
+*NODE        PORT = "80,443"
 
-*VHOST    PORT = "443",
-               SSLFLAG = Y,
-               SSLNAME = "ssl1"
+*VHOST       PORT = "443",
+             SSLFLAG = Y,
+             SSLNAME = "ssl1"
 
 *SSL         CertificateFile = "<cert.pem>",
-               CertificateKeyFile = "<newreq.pem>",
-               CertificateChainFile = "<caChain.pem>",
-               RequiredCiphers = "HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:3DES"
+             CertificateKeyFile = "<newreq.pem>",
+             CertificateChainFile = "<caChain.pem>",
+             RequiredCiphers = "HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:3DES"
 ~~~
 
 
