@@ -20,6 +20,9 @@
 `> wsdown`  
 `> wsboot`  
 
+- webtob VHOST 적용 시 도메인 발급  
+  - 폐쇄망의 경우 담당자에게 해당 도메인 발급을 요청한다.  
+
 - http.m 파일 ssl 적용  
   - 인증서 발급  
   newreq.pem, 도메인.p7b  
