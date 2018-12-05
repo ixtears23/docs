@@ -6,6 +6,7 @@
 
 
 - [jeus/webtob license 발급](https://technet.tmaxsoft.com/ko/front/main/main.do)  
+> hotname 입력시 Linux/Unix 의 경우 `> hostname` 입력하면 hostname을 확인할 수 있다.  
 
 - jeus license 확인  
 `> jeusadmin -licensedue`  
