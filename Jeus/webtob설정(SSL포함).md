@@ -1,16 +1,26 @@
-- webtob 홈 경로 확인  
+- webtob/jeus 홈 경로 확인  
 `> printenv`  
 
 - webtob 버전확인  
 `> wscfl -v`  
 
-- webtob license 확인  
+
+- [jeus/webtob license 발급](https://technet.tmaxsoft.com/ko/front/main/main.do)  
+
+- jeus license 확인  
 `> jeusadmin -licensedue`  
+`> jeusadmin -licenseinfo`  
+
+- jeus license 경로  
+`JEUS_HOME/license`  
+
+- webtob license 확인  
+`> wsadmin -i $WEBTOBDIR/license/license.dat`  
 
 - webtob license 경로  
 `WEBTOBDIR/license`  
 
-- http.m 환경설정 파일 경로
+- http.m 환경설정 파일 경로  
 `WEBTOBDIR/config`  
 
 - http.m 컴파일 명령어(컴파일 하면 해당경로에 wsconfig 파일 생성 됨)  
