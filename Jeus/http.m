@@ -3,7 +3,7 @@ jeuservice
 
 *NODE
 newtondev
-                        Port = "80",
+                        Port = "80,443,444,445",
                         Logging = "log1",
                         Docroot = "/home1/ekriss",
                         Shmkey = 59309,
@@ -41,7 +41,7 @@ apmp            DOCROOT = "/home1/apmp",
                 IndexName = "index.html",
                 NodeName = "newtondev"
 
-bpmdev                  DOCROOT = "/home1/ekriss/uengine",
+bpmdev          DOCROOT = "/home1/ekriss/uengine",
                 HOSTNAME = "bpmdev.kriss.re.kr",
                 PORT = "80",
                 ServiceOrder = "uri,ext",
@@ -66,7 +66,20 @@ eshopdev        DOCROOT = "/home1/ekriss/eshop",
                 IndexName = "index.jsp",
                 NodeName = "newtondev",
                 Logging = "eshopdevlog",
-                ErrorLog = "eshopdeverrlog"
+                ErrorLog = "eshopdeverrlog",
+                URLRewrite = Y,
+                URLRewriteConfig = "/home1/ekriss/webtob/config/rewrite.conf"
+                
+eshopdevssl     DOCROOT = "/home1/ekriss/eshop",
+                HOSTNAME = "eshopdev.kriss.re.kr",
+                PORT = "443",
+                ServiceOrder = "uri,ext",
+                IndexName = "index.jsp",
+                NodeName = "newtondev",
+                Logging = "eshopdevlog",
+                ErrorLog = "eshopdeverrlog",
+                SSLFLAG = Y,
+                SSLNAME = "ssleshop"
                                 
 epsdev          DOCROOT = "/home1/ekriss/eps",
                 HOSTNAME = "epsdev.kriss.re.kr",
@@ -75,7 +88,20 @@ epsdev          DOCROOT = "/home1/ekriss/eps",
                 IndexName = "index.jsp",
                 NodeName = "newtondev",
                 Logging = "epsdevlog",
-                ErrorLog = "epsdeverrlog"
+                ErrorLog = "epsdeverrlog",
+                URLRewrite = Y,
+                URLRewriteConfig = "/home1/ekriss/webtob/config/rewrite.conf"
+                                
+epsdevssl       DOCROOT = "/home1/ekriss/eps",
+                HOSTNAME = "epsdev.kriss.re.kr",
+                PORT = "444",
+                ServiceOrder = "uri,ext",
+                IndexName = "index.jsp",
+                NodeName = "newtondev",
+                Logging = "epsdevlog",
+                ErrorLog = "epsdeverrlog",
+                SSLFLAG = Y,
+                SSLNAME = "ssleps"
                                 
 insadev         DOCROOT = "/home1/ekriss/insa",
                 HOSTNAME = "insadev.kriss.re.kr",
@@ -84,7 +110,20 @@ insadev         DOCROOT = "/home1/ekriss/insa",
                 IndexName = "index.jsp",
                 NodeName = "newtondev",
                 Logging = "insadevlog",
-                ErrorLog = "insadeverrlog"
+                ErrorLog = "insadeverrlog",
+                URLRewrite = Y,
+                URLRewriteConfig = "/home1/ekriss/webtob/config/rewrite.conf"
+                                
+insadevssl      DOCROOT = "/home1/ekriss/insa",
+                HOSTNAME = "insadev.kriss.re.kr",
+                PORT = "445",
+                ServiceOrder = "uri,ext",
+                IndexName = "index.jsp",
+                NodeName = "newtondev",
+                Logging = "insadevlog",
+                ErrorLog = "insadeverrlog",
+                SSLFLAG = Y,
+                SSLNAME = "sslinsa"
 
 *ALIAS
 alias1          uri = "/kriss/ext/image/", RealPath = "/home1/ekriss/kriss/web/ext/image/"
@@ -96,9 +135,9 @@ alias6          uri = "/software/",  RealPath = "/home1/itsupport/software/"
 alias7          uri = "/workplace/", RealPath = "/home1/ekriss/kriss/workplace/"
 alias8          uri = "/its_assets/", RealPath = "/home1/itsupport/assets/"
 alias9          uri = "/assets/",  RealPath = "/home1/ekriss/kriss/web/assets/"
-alias10          uri = "/cms/cms_assets/", RealPath = "/home1/itsupport/cms/assets/"
-alias11          uri = "/upload/", RealPath = "/home1/itsupport/upload/"
-alias12          uri = "/kriss/assets/",  RealPath = "/home1/ekriss/kriss/web/assets/"
+alias10         uri = "/cms/cms_assets/", RealPath = "/home1/itsupport/cms/assets/"
+alias11         uri = "/upload/", RealPath = "/home1/itsupport/upload/"
+alias12         uri = "/kriss/assets/",  RealPath = "/home1/ekriss/kriss/web/assets/"
 
 *SVRGROUP
 htmlg           NodeName = "newtondev", SvrType = "HTML"
@@ -113,27 +152,36 @@ jsvg6           NodeName = "newtondev", SvrType = "JSV", VhostName = "krisstarde
 jsvg7           NodeName = "newtondev", SvrType = "JSV", VhostName = "eshopdev"
 jsvg8           NodeName = "newtondev", SvrType = "JSV", VhostName = "epsdev"
 jsvg9           NodeName = "newtondev", SvrType = "JSV", VhostName = "insadev"
+jsvg10          NodeName = "newtondev", SvrType = "JSV", VhostName = "eshopdevssl"
+jsvg11          NodeName = "newtondev", SvrType = "JSV", VhostName = "epsdevssl"
+jsvg12          NodeName = "newtondev", SvrType = "JSV", VhostName = "insadevssl"
 
 
 *SERVER
-html            SvgName = "htmlg", MinProc = 30, MaxProc = 50
-cgi             SvgName = "cgig", MinProc = 1, MaxProc = 2
-ssi             SvgName = "ssig", MinProc = 1, MaxProc = 2
-MyGroup         SvgName = "jsvg", MinProc = 80, MaxProc = 80
-tioomGroup      SvgName = "jsvg3", MinProc = 10, MaxProc = 20
-ITSGroup        SvgName = "jsvg4", MinProc = 80, MaxProc = 80
-BPMDEVGroup     SvgName = "jsvg5", MinProc = 80, MaxProc = 80
-KRISSDEVGroup   SvgName = "jsvg6", MinProc = 80, MaxProc = 80
-ESHOPDEVGroup   SvgName = "jsvg7", MinProc = 80, MaxProc = 80
-EPSDEVGroup     SvgName = "jsvg8", MinProc = 80, MaxProc = 80
-INSADEVGroup    SvgName = "jsvg9", MinProc = 80, MaxProc = 80
+html               SvgName = "htmlg", MinProc = 30, MaxProc = 50
+cgi                SvgName = "cgig", MinProc = 1, MaxProc = 2
+ssi                SvgName = "ssig", MinProc = 1, MaxProc = 2
+MyGroup            SvgName = "jsvg", MinProc = 80, MaxProc = 80
+tioomGroup         SvgName = "jsvg3", MinProc = 10, MaxProc = 20
+ITSGroup           SvgName = "jsvg4", MinProc = 80, MaxProc = 80
+BPMDEVGroup        SvgName = "jsvg5", MinProc = 80, MaxProc = 80
+KRISSDEVGroup      SvgName = "jsvg6", MinProc = 80, MaxProc = 80
+ESHOPDEVGroup      SvgName = "jsvg7", MinProc = 80, MaxProc = 80
+EPSDEVGroup        SvgName = "jsvg8", MinProc = 80, MaxProc = 80
+INSADEVGroup       SvgName = "jsvg9", MinProc = 80, MaxProc = 80
+ESHOPDEVSGroup     SvgName = "jsvg10", MinProc = 80, MaxProc = 80
+EPSDEVSGroup       SvgName = "jsvg11", MinProc = 80, MaxProc = 80
+INSADEVSGroup      SvgName = "jsvg12", MinProc = 80, MaxProc = 80
 
 *URI
 uri20           uri = "/", SvrType = "JSV", VhostName = "krisstardev"
 uri21           uri = "/", SvrType = "JSV", VhostName = "bpmdev"
-uri22           uri = "/", SvrType = "JSV", VhostName = "eshopdev"
-uri23           uri = "/", SvrType = "JSV", VhostName = "epsdev"
-uri24           uri = "/", SvrType = "JSV", VhostName = "insadev"
+uri22           uri = "/", SvrType = "JSV", VhostName = "eshopdevssl"
+uri23           uri = "/", SvrType = "JSV", VhostName = "epsdevssl"
+uri24           uri = "/", SvrType = "JSV", VhostName = "insadevssl"
+uri25           uri = "/", SvrType = "JSV", VhostName = "eshopdev"
+uri26           uri = "/", SvrType = "JSV", VhostName = "epsdev"
+uri27           uri = "/", SvrType = "JSV", VhostName = "insadev"
 uri2            uri = "/assets/", SvrType = "HTML"
 uri15           uri = "/kriss/assets/", SvrType = "HTML"
 uri6            uri = "/its_assets/", SvrType = "HTML", VhostName = "ITS"
@@ -153,49 +201,66 @@ uri1            uri = "/", SvrType = "JSV"
 
 *LOGGING
 log1
-                        FileName = "/home1/ekriss/webtob/log/access_%Y%%M%%D%.log",
-                        Format = "DEFAULT",
-                        Option = "sync"
+                     FileName = "/home1/ekriss/webtob/log/access_%Y%%M%%D%.log",
+                     Format = "DEFAULT",
+                     Option = "sync"
 log2
-                        FileName = "/home1/ekriss/webtob/log/error_%Y%%M%%D%.log",
-                        Format = "ERROR",
-                        Option = "sync"
+                     FileName = "/home1/ekriss/webtob/log/error_%Y%%M%%D%.log",
+                     Format = "ERROR",
+                     Option = "sync"
 log3
-                        FileName = "/home1/ekriss/webtob/log/access_tioom_%Y%%M%%D%.log",
-                        Format = "DEFAULT",
-                        Option = "sync"
+                     FileName = "/home1/ekriss/webtob/log/access_tioom_%Y%%M%%D%.log",
+                     Format = "DEFAULT",
+                     Option = "sync"
 log4
-                        FileName = "/home1/ekriss/webtob/log/error_tioom_%Y%%M%%D%.log",
-                        Format = "ERROR",
-                        Option = "sync"
-itslog          Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_its__%Y%%M%%D%.log",
-                Option = "sync"
-itserrlog       Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_its__%Y%%M%%D%.log",
-                Option = "sync"
-bpmdevlog       Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_bpmdev__%Y%%M%%D%.log",
-                Option = "sync"
-bpmdeverrlog    Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_bpmdev__%Y%%M%%D%.log",
-                Option = "sync"
-krisstardevlog          Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_krisstardev__%Y%%M%%D%.log",
-                Option = "sync"
-krisstardeverrlog       Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_krisstardev__%Y%%M%%D%.log",
-                Option = "sync"
+                     FileName = "/home1/ekriss/webtob/log/error_tioom_%Y%%M%%D%.log",
+                     Format = "ERROR",
+                     Option = "sync"
+itslog               Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_its__%Y%%M%%D%.log",
+                     Option = "sync"
+itserrlog            Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_its__%Y%%M%%D%.log",
+                     Option = "sync"
+bpmdevlog            Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_bpmdev__%Y%%M%%D%.log",
+                     Option = "sync"
+bpmdeverrlog         Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_bpmdev__%Y%%M%%D%.log",
+                     Option = "sync"
+krisstardevlog       Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_krisstardev__%Y%%M%%D%.log",
+                     Option = "sync"
+krisstardeverrlog    Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_krisstardev__%Y%%M%%D%.log",
+                     Option = "sync"
 eshopdevlog          Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_eshopdev__%Y%%M%%D%.log",
-                Option = "sync"
+                     Option = "sync"
 eshopdeverrlog       Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_eshopdev__%Y%%M%%D%.log",
-                Option = "sync"
-epsdevlog          Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_epsdev__%Y%%M%%D%.log",
-                Option = "sync"
-epsdeverrlog       Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_epsdev__%Y%%M%%D%.log",
-                Option = "sync"
-insadevlog          Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_insadev__%Y%%M%%D%.log",
-                Option = "sync"
-insadeverrlog       Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_insadev__%Y%%M%%D%.log",
-                Option = "sync"
-
+                     Option = "sync"
+epsdevlog            Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_epsdev__%Y%%M%%D%.log",
+                     Option = "sync"
+epsdeverrlog         Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_epsdev__%Y%%M%%D%.log",
+                     Option = "sync"
+insadevlog           Format = "DEFAULT", FileName = "/home1/ekriss/webtob/log/access_insadev__%Y%%M%%D%.log",
+                     Option = "sync"
+insadeverrlog        Format = "ERROR", FileName = "/home1/ekriss/webtob/log/error_insadev__%Y%%M%%D%.log",
+                     Option = "sync"
+                
+*SSL
+ssleshop        CertificateFile = "/home1/ekriss/webtob/ssl/eshop/cert_eshop.pem",
+                CertificateKeyFile = "/home1/ekriss/webtob/ssl/eshop/newreq_eshop.pem",
+                CertificateChainFile = "/home1/ekriss/webtob/ssl/eshop/caChain_eshop.pem",
+                RequiredCiphers = "HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:3DES"
+                
+ssleps          CertificateFile = "/home1/ekriss/webtob/ssl/eps/cert_eps.pem",
+                CertificateKeyFile = "/home1/ekriss/webtob/ssl/eps/newreq_eps.pem",
+                CertificateChainFile = "/home1/ekriss/webtob/ssl/eps/caChain_eps.pem",
+                RequiredCiphers = "HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:3DES"
+                
+sslinsa         CertificateFile = "/home1/ekriss/webtob/ssl/insa/cert_insa.pem",
+                CertificateKeyFile = "/home1/ekriss/webtob/ssl/insa/newreq_insa.pem",
+                CertificateChainFile = "/home1/ekriss/webtob/ssl/insa/caChain_insa.pem",
+                RequiredCiphers = "HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH:!EXP:!RC4:!IDEA:3DES"
+                                
+                
 *EXT
-htm            MimeType = "text/html", SvrType = HTML
-html           MimeType = "text/html", SvrType = HTML
+htm             MimeType = "text/html", SvrType = HTML
+html            MimeType = "text/html", SvrType = HTML
 jsp             MimeType = "application/jsp", SvrType = JSV
 swf             MimeType = "application/x-shockwave-flash", SvrType = HTML
 flv             MimeType = "video/flv", SVRTYPE = HTML
@@ -239,9 +304,9 @@ pdf             MimeType = "application/pdf",               SVRTYPE = HTML
 ocx             MimeType = "application/x-pe-win32-x86",    SVRTYPE = HTML
 xml             MimeType = "text/html", SVRTYPE = HTML
 css             MimeType = "text/css", SVRTYPE = HTML
-woff             MimeType = "application/x-font-woff", SVRTYPE = HTML
-eot              MimeType = "application/vnd.ms-fontobject", SVRTYPE = HTML
-ttf              MimeType = "application/font-ttf", SVRTYPE = HTML
+woff            MimeType = "application/x-font-woff", SVRTYPE = HTML
+eot             MimeType = "application/vnd.ms-fontobject", SVRTYPE = HTML
+ttf             MimeType = "application/font-ttf", SVRTYPE = HTML
 jsf             Mimetype ="application/jsp",  Svrtype=JSV,  SvrName=ITSGroup
 mp4             Mimetype ="video/mp4",  SVRTYPE = HTML
 
