@@ -1,7 +1,7 @@
 # 오류 관련
 
 
-### MultipleDomainsException
+### MultipleDomainsException 에러
 
 `> startDomainAdminServer -host 호스트:포트 -u 아이디 -p 비번` 실행 결과 `MultipleDomainsException` 발생
 
