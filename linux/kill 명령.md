@@ -12,7 +12,7 @@
    - 작업종료 개념  
 
 
-`kill -9 `ps -ef | grep 'PROCESS_NAME' | awk '{print $2}'``  
+`kill -9 ps -ef | grep 'PROCESS_NAME' | awk '{print $2}'``  
 
 1. kill -9 프로세스 ID로 프로세스 중지하겠다.  
 2. ps -ef 프로세스 전체출력.  
