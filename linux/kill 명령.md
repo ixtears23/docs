@@ -6,6 +6,12 @@
 
 ### kill 명령어
 
+ - kill -9 [pid]  
+   - 프로세스 강제 종료  
+ - kill -15 [pid]
+   - 작업종료 개념  
+
+
 `kill -9 `ps -ef | grep 'PROCESS_NAME' | awk '{print $2}'``  
 
 1. kill -9 프로세스 ID로 프로세스 중지하겠다.  
