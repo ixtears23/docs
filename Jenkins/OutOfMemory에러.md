@@ -6,13 +6,13 @@
 ### 문제 확인
 
 - 기존 Maven Build Goals (문제 없음)
-![mavenBuild](./img/mavenBuild.GIF)
+![mavenBuild](./img/mavenBuild.gif)
 
 - Maven Goals 에 pmd, findbugs Build 추가 (OutOfMemory 발생)
-![withFindBugBuild](./img/withFindBugBuild.GIF)
+![withFindBugBuild](./img/withFindBugBuild.gif)
 
 - Build 중인 console 창 확인  
-![콘솔](./img/콘솔.GIF)
+![콘솔](./img/콘솔.gif)
 
 - OutOfMemory 발생  
 ![findBug에러](./img/findBug에러.GIF)  
@@ -23,10 +23,10 @@
 #### Jenkins 서버를 실행할 때 JVM 옵션의 Memory 할당 값 변경
 
 - start.bat 파일 변경  
-![CI서버](./img/CI서버.GIF)
+![CI서버](./img/CI서버.gif)
 
 - JAVA_OPTS 값 변경  
-![start_bat](./img/start_bat.GIF)
+![start_bat](./img/start_bat.gif)
 
 #### Jenkins 에서 Maven 빌드시 Maven_OPTS 메모리 값 설정
 
@@ -37,14 +37,14 @@
 ![시스템관리](./img/시스템관리.GIF)
 
 - Global MAVEN_OPTS 에 Maven 빌드 시 메모리 값 설정  
-![시스템관리_Maven](./img/시스템관리_Maven.GIF)
+![시스템관리_Maven](./img/시스템관리_Maven.gif)
 
 #### Maven 빌드 중 Findbugs 빌드 시 메모리 값 설정
 - 기존 findbugs-maven-plugin 설정  
-![기존Pom](./img/기존Pom.GIF)
+![기존Pom](./img/기존Pom.gif)
 
 - findbugs-maven-plugin 설정에서 maxHeap 값을 추가해서 메모리 설정  
-![Pom메모리추가](./img/Pom메모리추가.GIF)
+![Pom메모리추가](./img/Pom메모리추가.gif)
 
 
 
