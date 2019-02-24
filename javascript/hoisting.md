@@ -1,8 +1,7 @@
-hoisting 이란.  
+# hoisting
 
-모든 선언을 scope의 상단으로 끌어 올립니다.  
+#### hoisting은 모든 선언을 scope의 상단으로 끌어 올립니다.  
 
-Hoisting은 선언을 맨 위로 이동시키는 JavaScript의 기본 동작입니다.  
 
 
 
