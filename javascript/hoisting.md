@@ -27,5 +27,34 @@ undefined
 ~~~
 
 #### javascript 는 선언만 hoisting 할 뿐 초기화는 hoists 하지 않습니다.
+#### example3
+~~~javascript
+console.log(a);
+var a = 5;
+~~~
+- output  
+~~~javascript
+undefined
+~~~
+
+#### example4
+~~~javascript
+d = 3;
+
+console.log(b);
+console.log(d);
+console.log(b + d);
+var b = 5;
+
+var d;
+~~~
+- output  
+~~~javascript
+5
+3
+8
+~~~
+
+
 
 ### Function Hoisting
