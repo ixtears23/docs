@@ -70,7 +70,7 @@ NaN
 변수 b의 초기화는 hoisting 되지 않기 때문에 undefined log를 출력합니다.  
 ---
 
-## 그렇다면 아래 예제의 output는 뭘까요?  
+### 그렇다면 아래 예제의 output은 뭘까요?  
 ~~~javascript
 var x = 12; 
 (function () { 
