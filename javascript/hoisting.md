@@ -50,9 +50,9 @@ var d;
 ~~~
 - output  
 ~~~javascript
-5
+undefined
 3
-8
+NaN
 ~~~
 
 
