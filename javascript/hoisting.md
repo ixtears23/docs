@@ -145,7 +145,7 @@ Uncaught TypeError: printName is not a function
 ~~~
 - 설명  
 변수 printName 만 hoisting 되었고, 초기화는 hoisting 하지 않았기 때문입니다.  
-
+---
 
 ## 변수를 맨 위에 선언하십시오!!
 ### 개발자가 호이스팅을 이해 하지 못하면 프로그램에 버그가 있을 수 있습니다.
