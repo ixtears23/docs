@@ -70,6 +70,17 @@ NaN
 변수 b의 초기화는 hoisting 되지 않기 때문에 undefined log를 출력합니다.  
 ---
 
+## 그렇다면 아래 예제의 output는 뭘까요?  
+~~~javascript
+var x = 12; 
+(function () { 
+  console.log (x); 
+  var x = 13; 
+} ());
+~~~
+
+
+
 ## let, const 는 어떻게 될까요?
 
 ### example5
@@ -103,10 +114,7 @@ Uncaught SyntaxError: Missing initializer in const declaration
 
 - 설명  
 const는 초기화 될 때 동시에 값을 할당해야합니다.  
-
 ---
-
-
 
 
 ### Function Hoisting
@@ -146,6 +154,8 @@ Uncaught TypeError: printName is not a function
 - 설명  
 변수 printName 만 hoisting 되었고, 초기화는 hoisting 하지 않았기 때문입니다.  
 ---
+
+
 
 ## 변수를 맨 위에 선언하십시오!!
 ### 개발자가 호이스팅을 이해 하지 못하면 프로그램에 버그가 있을 수 있습니다.
