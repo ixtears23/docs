@@ -2,6 +2,8 @@
 
 #### hoisting은 모든 선언을 scope의 상단으로 끌어 올립니다.  
 
+ - javascript 가 runtime에 compile 될 때 변수가 scope의 맨 위로 이동합니다.  
+
 
 
 
