@@ -15,6 +15,7 @@ Uncaught ReferenceError: a is not defined...
 ~~~
 - 설명  
 변수가 선언되지 않으면 발생하는 javascript error 입니다.  
+---
 
 #### example2
 ~~~javascript
@@ -29,7 +30,7 @@ undefined
 - 설명  
 변수 a를 hoisting 했기 때문에 undefined 가 출력 되었습니다.  
 당연히 초기화를 해주지 않았기 때문에 undefined 입니다.  
-
+---
 #### javascript 는 선언만 hoisting 할 뿐 초기화는 hoists 하지 않습니다.
 #### example3
 ~~~javascript
