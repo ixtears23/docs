@@ -6,24 +6,27 @@ Hoisting은 선언을 맨 위로 이동시키는 JavaScript의 기본 동작입�
 
 
 
+#### example1
 ~~~javascript
-
 console.log(a);
 ~~~
-
-output
+- output  
 ~~~javascript
 Uncaught ReferenceError: a is not defined...
 ~~~
 
+#### example2
 ~~~javascript
 console.log(a);
-
 var a;
 ~~~
 
+- output  
 ~~~javascript
 undefined
 ~~~
+
+
+`**javascript 는 선언만 hoisting 할 뿐 초기화는 hoists 하지 않습니다.**`
 
 ### Function Hoisting
