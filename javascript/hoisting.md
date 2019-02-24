@@ -26,7 +26,6 @@ var a;
 undefined
 ~~~
 
-
-`**javascript 는 선언만 hoisting 할 뿐 초기화는 hoists 하지 않습니다.**`
+#### javascript 는 선언만 hoisting 할 뿐 초기화는 hoists 하지 않습니다.
 
 ### Function Hoisting
