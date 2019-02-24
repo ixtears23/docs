@@ -126,6 +126,9 @@ function printName() {
 ~~~javascript
 junseok
 ~~~
+- 설명  
+printName 함수는 hoisting 되었습니다.
+---
 
 ### example8
 ~~~javascript
@@ -138,11 +141,10 @@ var printName = function() {
 
 - output  
 ~~~javascript
-undefined
+Uncaught TypeError: printName is not a function
 ~~~
 - 설명  
-변수 printName 만 hoisting 되었고, 초기화는 hoisting 하지 않기 때문에  
-undefined가 출력됩니다.
+변수 printName 만 hoisting 되었고, 초기화는 hoisting 하지 않았기 때문입니다.  
 
 
 ## 변수를 맨 위에 선언하십시오!!
