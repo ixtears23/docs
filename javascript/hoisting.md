@@ -10,6 +10,7 @@
 console.log(a);
 ~~~
 - output  
+  변수가 선언되지 않으면 발생하는 javascript error 입니다.  
 ~~~javascript
 Uncaught ReferenceError: a is not defined...
 ~~~
@@ -21,6 +22,8 @@ var a;
 ~~~
 
 - output  
+변수 a를 hoisting 했기 때문에 undefined 가 출력 되었습니다.  
+당연히 초기화를 해주지 않았기 때문에 undefined 입니다.  
 ~~~javascript
 undefined
 ~~~
@@ -32,6 +35,7 @@ console.log(a);
 var a = 5;
 ~~~
 - output  
+변수 a는 hoisting 했지만 초기화는 hoisting 하지 않기 때문에 undefined 입니다.  
 ~~~javascript
 undefined
 ~~~
@@ -48,6 +52,8 @@ var b = 5;
 var d;
 ~~~
 - output  
+변수 b와 d 는 hoisting 되었습니다. console.log 가 찍히기 전 변수 d만 초기화 했습니다.  
+변수 b의 초기화는 hoisting 되지 않기 때문에 undefined log를 출력합니다.  
 ~~~javascript
 undefined
 3
