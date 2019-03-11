@@ -1,3 +1,5 @@
+해당 readme.md 파일 제외하고 포스팅 완료   
+
 # XML(Extensible Markup Language)
 
 - 확장 가능한 마크업 언어
