@@ -18,9 +18,9 @@
 
 - [uengineDeploy.sh](linux/uengineDeploy.sh) (2023-09-27)
 - [readme.md](linux/readme.md) (2023-09-27)
-- [nextKrissDeploy.sh](linux/nextKrissDeploy.sh) (2023-09-27)
+- [next***Deploy.sh.md](linux/next***Deploy.sh.md) (2023-09-27)
 - [kill 명령.md](linux/kill%20명령.md) (2023-09-27)
-- [nextKrissDeploy.sh.md](linux/nextKrissDeploy.sh.md) (2023-09-27)
+- [***Deploy.sh](linux/***Deploy.sh) (2023-09-27)
 ## Jeus
 
 - [spring_tomcat_tibero설정.md](Jeus/spring_tomcat_tibero설정.md) (2023-09-27)
