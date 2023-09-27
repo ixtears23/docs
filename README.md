@@ -1,5 +1,5 @@
 # docs
-5-6년 전이네, 어디다 정리해야 할지 몰라서, 여기에 정리 했었지...
+기록..
 
 ### DBeaver
 - [shortcut(2018-09-05)](https://github.com/ixtears23/docs/blob/master/DB%20Tools/DBeaver/shortcut.md)
