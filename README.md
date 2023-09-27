@@ -1,4 +1,4 @@
-# My Project
+# legacy-memo
 
 - [servletSpec.md](servletSpec.md)
 - [site.md](site.md)
@@ -89,30 +89,7 @@
 
 ## Jeus/img/jeus
 
-- [httpListener_add_02.GIF](Jeus/img/jeus/httpListener_add_02.GIF)
-- [httpListener_add_03.GIF](Jeus/img/jeus/httpListener_add_03.GIF)
-- [httpListener_add_01.GIF](Jeus/img/jeus/httpListener_add_01.GIF)
-- [httpListener_add_04.GIF](Jeus/img/jeus/httpListener_add_04.GIF)
-- [httpListener_add_05.GIF](Jeus/img/jeus/httpListener_add_05.GIF)
-- [httpListener_add_07.GIF](Jeus/img/jeus/httpListener_add_07.GIF)
-- [httpListener_add_06.GIF](Jeus/img/jeus/httpListener_add_06.GIF)
-- [webEngine_add_01.GIF](Jeus/img/jeus/webEngine_add_01.GIF)
-- [webEngine_add_02.GIF](Jeus/img/jeus/webEngine_add_02.GIF)
 - [readme.md](Jeus/img/jeus/readme.md)
-- [jspEngine_add_01.GIF](Jeus/img/jeus/jspEngine_add_01.GIF)
-- [listener_add_03.GIF](Jeus/img/jeus/listener_add_03.GIF)
-- [server_add_02.GIF](Jeus/img/jeus/server_add_02.GIF)
-- [webtob_add_01.GIF](Jeus/img/jeus/webtob_add_01.GIF)
-- [listener_add_02.GIF](Jeus/img/jeus/listener_add_02.GIF)
-- [httpListener_add_08.GIF](Jeus/img/jeus/httpListener_add_08.GIF)
-- [server_add_01.GIF](Jeus/img/jeus/server_add_01.GIF)
-- [webtob_add_02.GIF](Jeus/img/jeus/webtob_add_02.GIF)
-- [webtob_add_03.GIF](Jeus/img/jeus/webtob_add_03.GIF)
-- [listener_add_01.GIF](Jeus/img/jeus/listener_add_01.GIF)
-- [webtob_add_07.GIF](Jeus/img/jeus/webtob_add_07.GIF)
-- [webtob_add_06.GIF](Jeus/img/jeus/webtob_add_06.GIF)
-- [webtob_add_04.GIF](Jeus/img/jeus/webtob_add_04.GIF)
-- [webtob_add_05.GIF](Jeus/img/jeus/webtob_add_05.GIF)
 ## java
 
 - [Date.md](java/Date.md)
@@ -201,74 +178,6 @@
 - [OutOfMemory에러.md](Jenkins/OutOfMemory에러.md)
 - [Docker.md](Jenkins/Docker.md)
 
-## .git
-
-- [config](.git/config)
-- [HEAD](.git/HEAD)
-- [description](.git/description)
-- [index](.git/index)
-- [packed-refs](.git/packed-refs)
-
-## .git/objects
-
-
-## .git/objects/pack
-
-- [pack-074182724f7dc9c3ad5a0f2401a2a8ac1cc002f1.pack](.git/objects/pack/pack-074182724f7dc9c3ad5a0f2401a2a8ac1cc002f1.pack)
-- [pack-074182724f7dc9c3ad5a0f2401a2a8ac1cc002f1.idx](.git/objects/pack/pack-074182724f7dc9c3ad5a0f2401a2a8ac1cc002f1.idx)
-## .git/objects/info
-
-## .git/objects/e6
-
-- [9de29bb2d1d6434b8b29ae775ad8c2e48c5391](.git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391)
-## .git/info
-
-- [exclude](.git/info/exclude)
-## .git/logs
-
-- [HEAD](.git/logs/HEAD)
-
-## .git/logs/refs
-
-
-## .git/logs/refs/heads
-
-- [master](.git/logs/refs/heads/master)
-## .git/logs/refs/remotes
-
-
-## .git/logs/refs/remotes/origin
-
-- [HEAD](.git/logs/refs/remotes/origin/HEAD)
-## .git/hooks
-
-- [commit-msg.sample](.git/hooks/commit-msg.sample)
-- [pre-rebase.sample](.git/hooks/pre-rebase.sample)
-- [pre-commit.sample](.git/hooks/pre-commit.sample)
-- [applypatch-msg.sample](.git/hooks/applypatch-msg.sample)
-- [fsmonitor-watchman.sample](.git/hooks/fsmonitor-watchman.sample)
-- [pre-receive.sample](.git/hooks/pre-receive.sample)
-- [prepare-commit-msg.sample](.git/hooks/prepare-commit-msg.sample)
-- [post-update.sample](.git/hooks/post-update.sample)
-- [pre-merge-commit.sample](.git/hooks/pre-merge-commit.sample)
-- [pre-applypatch.sample](.git/hooks/pre-applypatch.sample)
-- [pre-push.sample](.git/hooks/pre-push.sample)
-- [update.sample](.git/hooks/update.sample)
-- [push-to-checkout.sample](.git/hooks/push-to-checkout.sample)
-## .git/refs
-
-
-## .git/refs/heads
-
-- [master](.git/refs/heads/master)
-## .git/refs/tags
-
-## .git/refs/remotes
-
-
-## .git/refs/remotes/origin
-
-- [HEAD](.git/refs/remotes/origin/HEAD)
 ## editor
 
 - [마크다운 작성방법.md](editor/마크다운%20작성방법.md)
@@ -349,21 +258,3 @@
 - [1.2.7. Exceptions.md](spring/Web%20Servlet/SpringWebMVC/1.2.7.%20Exceptions.md)
 - [1.2. DispatcherServlet.md](spring/Web%20Servlet/SpringWebMVC/1.2.%20DispatcherServlet.md)
 - [1.1. Introduction.md](spring/Web%20Servlet/SpringWebMVC/1.1.%20Introduction.md)
-## .idea
-
-- [vcs.xml](.idea/vcs.xml)
-- [.gitignore](.idea/.gitignore)
-- [workspace.xml](.idea/workspace.xml)
-- [modules.xml](.idea/modules.xml)
-- [legacy-memo.iml](.idea/legacy-memo.iml)
-- [misc.xml](.idea/misc.xml)
-
-## .idea/sonarlint
-
-
-## .idea/sonarlint/issuestore
-
-- [index.pb](.idea/sonarlint/issuestore/index.pb)
-## .idea/sonarlint/securityhotspotstore
-
-- [index.pb](.idea/sonarlint/securityhotspotstore/index.pb)
