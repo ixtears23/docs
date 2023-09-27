@@ -13,7 +13,7 @@ echo 'Server Stop Ok ~~ '
 
 echo 'remove *** Directory Go Go ~~ '
 
-cd $krissSource
+cd $***
 
 rm -r /home1/***/***/design
 rm -r /home1/***/***/META-INF
