@@ -1,0 +1,25 @@
+name: Update README
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code with full history
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Run script
+      run: python update_readme.py
+    - name: Commit and push if changed
+      run: |
+        git diff
+        git config --local user.email "ixtears23@icloud.com"
+        git config --local user.name "Junseok Oh"
+        git add README.md
+        git commit -m "Update README.md" || echo "No changes to commit"
+        git push
