@@ -2,7 +2,7 @@
 #!/bin/sh
 
 uengineSource="/home1/***/uengine";
-krissName='bpm-4.0.0-BUILD-SNAPSHOT'
+***Name='bpm-4.0.0-BUILD-SNAPSHOT'
  
 
 echo 'Server Stop Go Go ~~ '
