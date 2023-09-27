@@ -1,13 +1,13 @@
 
 #!/bin/sh
 
-uengineSource="/home1/ekriss/uengine";
+uengineSource="/home1/***/uengine";
 krissName='bpm-4.0.0-BUILD-SNAPSHOT'
  
 
 echo 'Server Stop Go Go ~~ '
 
-/home1/ekriss/jeus7/bin/stopServer -host localhost:9720 -u administrator -p jeusadmin
+/home1/***/jeus7/bin/stopServer -host localhost:9720 -u administrator -p jeusadmin
 
 echo 'Server Stop Ok ~~ '
 
@@ -45,7 +45,7 @@ echo 'rename sso conf OK !! '
 
 echo 'server start Go Go ~~ '
 
-/home1/ekriss/jeus7/bin/jeusadmin -port 9700 -u administrator -p jeusadmin << EOF
+/home1/***/jeus7/bin/jeusadmin -port 9700 -u administrator -p jeusadmin << EOF
 start-server server2
 exit
 EOF
