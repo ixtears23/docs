@@ -1,7 +1,7 @@
 
 #!/bin/sh
 
-uengineSource="/home1/***/uengine";
+uengineSource="/home1/***/***";
 ***Name='bpm-4.0.0-BUILD-SNAPSHOT'
  
 
@@ -15,9 +15,9 @@ echo 'Server Stop Ok ~~ '
 
 echo 'war unzip Go Go ~~ '
 
-cd $uengineSource
+cd $***
 
-jar -xvf $uengineSource/bpm-4.0.0-BUILD-SNAPSHOT.war
+jar -xvf $***/bpm-4.0.0-BUILD-SNAPSHOT.war
 
 echo 'war unzip Ok !! '
 
@@ -25,7 +25,7 @@ echo 'war unzip Ok !! '
 
 echo 'war file remove ... '
 
-cd $uengineSource
+cd $***
 
 rm -f bpm-4.0.0-BUILD-SNAPSHOT.war
 
@@ -35,9 +35,9 @@ echo 'war file remove Ok !! '
 
 echo 'rename sso conf ...'
 
-mv $uengineSource/WEB-INF/classes/tmaxeamagent.conf.run $uengineSource/WEB-INF/classes/tmaxeamagent.conf
-mv $uengineSource/WEB-INF/classes/tmaxeamagent.lic.run $uengineSource/WEB-INF/classes/tmaxeamagent.lic
-mv $uengineSource/WEB-INF/classes/tmaxeamapi.conf.run $uengineSource/WEB-INF/classes/tmaxeamapi.conf
+mv $***/WEB-INF/classes/tmaxeamagent.conf.run $uengineSource/WEB-INF/classes/tmaxeamagent.conf
+mv $***/WEB-INF/classes/tmaxeamagent.lic.run $uengineSource/WEB-INF/classes/tmaxeamagent.lic
+mv $***/WEB-INF/classes/tmaxeamapi.conf.run $uengineSource/WEB-INF/classes/tmaxeamapi.conf
 
 echo 'rename sso conf OK !! '
 
