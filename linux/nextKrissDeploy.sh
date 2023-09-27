@@ -1,33 +1,33 @@
 #!/bin/sh
 
-krissSource="/home1/ekriss/nextKriss";
+***="/home1/***/***";
 
 
 echo 'Server Stop Go Go ~~ '
 
-/home1/ekriss/jeus7/bin/stopServer -host localhost:9710 -u administrator -p jeusadmin
+/home1/***/jeus7/bin/stopServer -host localhost:9710 -u administrator -p jeusadmin
 
 echo 'Server Stop Ok ~~ '
 
 
 
-echo 'remove nextKriss Directory Go Go ~~ '
+echo 'remove *** Directory Go Go ~~ '
 
 cd $krissSource
 
-rm -r /home1/ekriss/nextKriss/design
-rm -r /home1/ekriss/nextKriss/META-INF
-rm -r /home1/ekriss/nextKriss/WEB-INF
+rm -r /home1/***/***/design
+rm -r /home1/***/***/META-INF
+rm -r /home1/***/***/WEB-INF
 
-echo 'remove nextKriss Directory Ok !! '
+echo 'remove *** Directory Ok !! '
 
 
 
 echo 'war unzip Go Go ~~ '
 
-cd $krissSource
+cd $***
 
-jar -xvf $krissSource/web.krisstar-3.5.0.war
+jar -xvf $***/web.***-3.5.0.war
 
 echo 'war unzip Ok !! '
 
@@ -35,9 +35,9 @@ echo 'war unzip Ok !! '
 
 echo 'war file remove ... '
 
-cd $krissSource
+cd $***
 
-rm -f web.krisstar-3.5.0.war
+rm -f web.***-3.5.0.war
 
 echo 'war file remove Ok !! '
 
@@ -45,7 +45,7 @@ echo 'war file remove Ok !! '
 
 echo 'server start Go Go ~~ '
 
-/home1/ekriss/jeus7/bin/jeusadmin -port 9700 -u administrator -p jeusadmin << EOF
+/home1/***/jeus7/bin/jeusadmin -port 9700 -u administrator -p jeusadmin << EOF
 start-server server1
 exit
 EOF
