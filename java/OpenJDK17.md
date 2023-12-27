@@ -1,4 +1,4 @@
-## OpenJDK 버전 선택
+## 🧊 OpenJDK 버전 선택
 
 - OpenJDK를 선택하기 위해서는, LTS(Long Term Support) 를 사용해야 합니다.LTS 버전은 추가 기능, 버그 수정, 보안 업데이트가 정기적으로 제공되며, 일반적으로 몇 년 간 지원되기 때문입니다.
 - LTS 버전
@@ -8,13 +8,12 @@
   - OpenJDK21 - 28년
 
 
-
 - **Premier Support Until**  
 일반적으로 제품 출시 후 초기 몇 년 동안 제공되는 기본 지원 서비스를 의미합니다
 - **Extended Support UntilPremier Support**  
 기간이 끝난 후 제공되는 추가 지원 옵션입니다일반적으로 추가 비용이 발생하며, 주로 기업이 마이그레이션할 시간을 벌기 위해 사용됩니다
 
-## OpenJDK17 을 선택한 이유 
+## 🧊 OpenJDK17 을 선택한 이유 
 
 - Gradle 빌드 문제 OpenJDK21을 선택하고자 했지만, BodyCodi Plus Project 개발 당시에 Gradle Build 지원이 OpenJDK 17까지만 지원 되었고, OpenJDK21에 대해서는 준비 중이었습니다.  
 ***현재 Gradle 8.5 버전에서는 Java21 프로젝트를 완전히 지원***
@@ -22,34 +21,31 @@
 - 추가된 기능 및 보안 패치
 - 성능 개선
 
-## 추가 및 개선된 Code
+## 🧊 추가 및 개선된 Code
 
-https://docs.oracle.com/en/java/javase/17/language/index.html#Java-Platform%2C-Standard-Edition 
+[Java Language Updates](https://docs.oracle.com/en/java/javase/17/language/index.html#Java-Platform%2C-Standard-Edition)
 
-Local Variable Type Inference
+### Local Variable Type Inference
+Java 8에서는 모든 로컬 변수에 명시적인 타입 선언이 필요했습니다.  
+Java 10부터 도입된 var 키워드를 사용하면 로컬 변수의 타입 추론이 가능합니다.  
 
-Java 8에서는 모든 로컬 변수에 명시적인 타입 선언이 필요했습니다.
-
-Java 10부터 도입된 var 키워드를 사용하면 로컬 변수의 타입 추론이 가능합니다.
-
-before
-
+**before**
+~~~java
 List<String> list = new ArrayList<>();
 Stream<String> stream = list.stream();
+~~~
 
-after
-
+**after**  
+~~~java
 var list = new ArrayList<String>(); // ArrayList<String> 타입으로 추론됩니다.
 var stream = list.stream(); // Stream<String> 타입으로 추론됩니다.
+~~~
+### HTTP Client API
+Java 8에서는 HttpClient API가 존재하지 않았으므로, HttpURLConnection 또는 Apache HttpClient와 같은 외부 라이브러리를 사용했습니다.  
+Java 11부터 도입된 HttpClient 를 사용해서 HTTP 요청을 보내고 응답을 받을 수 있습니다.  
 
-HTTP Client API
-
-Java 8에서는 HttpClient API가 존재하지 않았으므로, HttpURLConnection 또는 Apache HttpClient와 같은 외부 라이브러리를 사용했습니다.
-
-Java 11부터 도입된 HttpClient 를 사용해서 HTTP 요청을 보내고 응답을 받을 수 있습니다.
-
-before
-
+**before**  
+~~~java
 URL url = new URL("http://example.com");
 HttpURLConnection con = (HttpURLConnection) url.openConnection();
 con.setRequestMethod("GET");
@@ -64,23 +60,24 @@ in.close();
 con.disconnect();
 
 System.out.println(content.toString());
+~~~
 
-after
-
+**after**  
+~~~java
 HttpClient client = HttpClient.newHttpClient();
 HttpRequest request = HttpRequest.newBuilder()
         .uri(URI.create("http://example.com"))
         .build();
 HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 System.out.println(response.body());
-
-Sealed Classes and Interfaces
-
+~~~
+### Sealed Classes and Interfaces
 sealed 클래스와 인터페이스는 해당 클래스를 상속하는 서브클래스의 종류를 제한합니다. 이를 통해 더 엄격한 타입 안정성을 제공합니다.
 
-https://docs.oracle.com/en/java/javase/17/language/sealed-classes-and-interfaces.html#GUID-0C709461-CC33-419A-82BF-61461336E65F 
-new
+[Java Language Updates](https://docs.oracle.com/en/java/javase/17/language/sealed-classes-and-interfaces.html#GUID-0C709461-CC33-419A-82BF-61461336E65F) 
 
+**new**  
+~~~java
 public sealed class Shape permits Circle, Square {
     // 클래스 정의...
 }
@@ -92,13 +89,12 @@ final class Circle extends Shape {
 final class Square extends Shape {
     // 클래스 정의...
 }
+~~~
+### Switch Expression
+Java17 에서는 더 간결하고 명확한 문법을 제공합니다.  
 
-Switch Expression
-
-Java17 에서는 더 간결하고 명확한 문법을 제공합니다.
-
-before
-
+**before**  
+~~~java
 String day = "MONDAY";
 switch (day) {
     case "MONDAY":
@@ -113,9 +109,9 @@ switch (day) {
     default:
         System.out.println("Invalid day");
 }
-
-after
-
+~~~
+**after**  
+~~~java
 String day = "MONDAY";
 String typeOfDay = switch (day) {
     case "MONDAY", "FRIDAY" -> "Weekday";
@@ -123,33 +119,32 @@ String typeOfDay = switch (day) {
     default -> "Invalid day";
 };
 System.out.println(typeOfDay);
+~~~
 
-Pattern Matching  instanceof
+### Pattern Matching  instanceof
+Java17에서는 instanceof 와 함께 패턴 매칭을 사용하여 타입 캐스팅을 간소화할 수 있습니다.  
 
-Java17에서는 instanceof 와 함께 패턴 매칭을 사용하여 타입 캐스팅을 간소화할 수 있습니다.
-
-before
-
+**before**
+~~~java
 Object obj = "Hello, World!";
 if (obj instanceof String) {
     String s = (String) obj;
     System.out.println(s.toUpperCase());
 }
-
-after
-
+~~~
+**after**  
+~~~java
 Object obj = "Hello, World!";
 if (obj instanceof String s) {
     System.out.println(s.toUpperCase());
 }
+~~~
+### Record
+일반 클래스보다 간단한 형식으로 일반 데이터 집계를 모델링하는 데 도움이 됩니다.  
+적절한 접근자, 생성자, equals, hashCode및 toString메서드가 자동으로 생성됩니다.  
 
-Record
-
-일반 클래스보다 간단한 형식으로 일반 데이터 집계를 모델링하는 데 도움이 됩니다
-적절한 접근자, 생성자, equals, hashCode및 toString메서드가 자동으로 생성됩니다
-
-before
-
+**before**  
+~~~java
 public final class Rectangle {
     private final double length;
     private final double width;
@@ -173,32 +168,32 @@ public final class Rectangle {
     // including their names.
     public String toString() {...}
 }
-
-after
-
+~~~
+**after**  
+~~~java
 record Rectangle(double length, double width) { }
+~~~
 
-Text blocks
+### Text blocks
+여러줄을  작성하기 위해서 기존에는 `\n` 을 사용해야 했지만, `“““` 를 사용해서 여러줄 코드를 작성할 수 있습니다.  
 
-여러줄을  작성하기 위해서 기존에는 \n 을 사용해야 했지만, “““ 를 사용해서 여러줄 코드를 작성할 수 있습니다
+[Java SE Text Blocks Programmer's Guide](https://docs.oracle.com/en/java/javase/17/text-blocks/index.html)  
 
-https://docs.oracle.com/en/java/javase/17/text-blocks/index.html 
-
-before
-
+**before**  
+~~~java
 String json = "{\n" +
               "  \"name\": \"John\",\n" +
               "  \"age\": 30\n" +
               "}";
-
-after
-
+~~~
+**after**  
+~~~java
 String json = """
               {
                 "name": "John",
                 "age": 30
               }""";
-
+~~~
 NullPointerException
 
 before
