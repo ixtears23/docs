@@ -7,7 +7,7 @@
   - OpenJDK17 - 26년
   - OpenJDK21 - 28년
  
-![대체 텍스트](이미지 URL)
+![OracleJavaSESupportRoadmap](OracleJavaSESupportRoadmap.png)
 
 - **Premier Support Until**  
 일반적으로 제품 출시 후 초기 몇 년 동안 제공되는 기본 지원 서비스를 의미합니다
