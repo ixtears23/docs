@@ -215,14 +215,14 @@ at Prog.main(Prog.java:5)
 > 자바 애플리케이션 서버와 백엔드 데이터베이스 시스템의 성능을 평가하기 위해 설계되었습니다.  
 
 ### Throughput Comparison(처리량 비교)
-![대체 텍스트](이미지 URL)  
+![Throughput](Throughput.png)  
 
 
 처리량 측면에서, Parallel에서는 JDK 8과 JDK 11 사이에 큰 차이가 없으며 JDK 17은 JDK 8보다 약 15% 더 높습니다.  
 G1의 JDK 17은 JDK 8보다 18% 더 높습니다. ZGC는 JDK 11에 도입되었으며, JDK 17은 JDK 11에 비해 20% 이상 향상되었습니다.  
 
 ### Latency Comparison(지연시간 비교)
-![대체 텍스트](이미지 URL)  
+![Latency](Latency.png)  
 
 
 GC 대기 시간 측면에서 JDK 17의 개선이 뚜렷합니다.  
@@ -233,7 +233,7 @@ G1에서 JDK 11은 JDK 8에 비해 26% 향상되었으며 JDK 17은 JDK 8에 비
 JDK 11과 비교하면 JDK ZGC의 17은 40% 이상 향상되었습니다.  
 
 ### Resource Usage(Resource 사용)
-![대체 텍스트](이미지 URL)  
+![Resource](Resource.png)  
 
 
 위 그림은 세 가지 수집기의 최대 기본 메모리 사용량을 비교합니다.  
